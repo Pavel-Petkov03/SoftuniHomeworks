@@ -27,10 +27,10 @@
 # •	There will be no case in which the snake will go through itself.
 
 
-
 n = int(input())
 snake_lair = [list(input()) for c in range(n)]
 final_res = 0
+
 
 def start(m):
     for r in range(len(m)):
@@ -50,7 +50,7 @@ def check_for_item(m, r, c):
                 if m[row][col] == 'B':
                     r, c = row, col
                     m[r][c] = 'S'
-                    return m,r,c
+                    return m, r, c
 
     return m, r, c
 
@@ -59,7 +59,7 @@ def move(m, r, c, cmd):
     m[r][c] = '.'
     if cmd == 'left':
         c -= 1
-        m,r,c = check_for_item(m,r,c)
+        m, r, c = check_for_item(m, r, c)
     elif cmd == 'right':
         c += 1
         m, r, c = check_for_item(m, r, c)
@@ -70,11 +70,12 @@ def move(m, r, c, cmd):
         r += 1
         m, r, c = check_for_item(m, r, c)
     m[r][c] = 'S'
-    return m,r,c
+    return m, r, c
 
-def validate(m,r,c,cmd):
+
+def validate(m, r, c, cmd):
     if cmd == 'left':
-         c -= 1
+        c -= 1
     elif cmd == 'right':
         c += 1
     elif cmd == 'up':
@@ -84,12 +85,14 @@ def validate(m,r,c,cmd):
     if r in range(len(m)) and c in range(len(m[0])):
         return True
     return False
+
+
 entry_row, entry_col = start(snake_lair)
 is_over = False
 while final_res != 10:
     command = input()
-    if validate(snake_lair,entry_row,entry_col,command):
-        snake_lair,entry_row,entry_col = move(snake_lair,entry_row,entry_col,command)
+    if validate(snake_lair, entry_row, entry_col, command):
+        snake_lair, entry_row, entry_col = move(snake_lair, entry_row, entry_col, command)
     else:
         snake_lair[entry_row][entry_col] = '.'
         is_over = True

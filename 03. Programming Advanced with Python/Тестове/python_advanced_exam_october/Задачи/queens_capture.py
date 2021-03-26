@@ -23,7 +23,7 @@ final_list = []
 matrix = [input().split() for c in range(board_length)]
 
 
-def is_another_queen(m,r,c):
+def is_another_queen(m, r, c):
     if m[r][c] == 'Q':
         return True
     return False
@@ -36,15 +36,15 @@ def see_queen(m, r, c):
 
 
 def horizontal_logic(m, r, c):
-    for left_check in range(1, c+1):
+    for left_check in range(1, c + 1):
         if not is_another_queen(m, r, c - left_check):
             if check_for_validation(m, r, c - left_check):
                 return True
         else:
             break
     for right_check in range(1, len(m[r]) - c):
-        if not is_another_queen(m, r, c+right_check):
-            if check_for_validation(m, r, c+right_check):
+        if not is_another_queen(m, r, c + right_check):
+            if check_for_validation(m, r, c + right_check):
                 return True
         else:
             break
@@ -52,15 +52,15 @@ def horizontal_logic(m, r, c):
 
 
 def vertical_logic(m, r, c):
-    for up_check in range(1, r+1):
-        if not is_another_queen(m, r-up_check, c):
-            if check_for_validation(m, r-up_check, c):
+    for up_check in range(1, r + 1):
+        if not is_another_queen(m, r - up_check, c):
+            if check_for_validation(m, r - up_check, c):
                 return True
         else:
             break
     for down_check in range(1, len(m) - r):
-        if not is_another_queen(m, r+down_check, c):
-            if check_for_validation(m, r+down_check, c):
+        if not is_another_queen(m, r + down_check, c):
+            if check_for_validation(m, r + down_check, c):
                 return True
         else:
             break
@@ -83,14 +83,14 @@ def diagonal_logic(m, r, c):
             else:
                 break
 
-    for down_left in range(1,len(m) - r+1):
+    for down_left in range(1, len(m) - r + 1):
         if check_for_range(m, r + down_left, c - down_left):
             if not is_another_queen(m, r + down_left, c - down_left):
                 if check_for_validation(m, r + down_left, c - down_left):
                     return True
             else:
                 break
-    for down_right in range(1,len(m) - r+1):
+    for down_right in range(1, len(m) - r + 1):
         if check_for_range(m, r + down_right, c + down_right):
             if not is_another_queen(m, r + down_right, c + down_right):
                 if check_for_validation(m, r + down_right, c + down_right):
@@ -118,7 +118,6 @@ for row in range(len(matrix)):
     for col in range(len(matrix[row])):
         if matrix[row][col] == 'Q':
             see_queen(matrix, row, col)
-
 
 if not final_list:
     print('The king is safe!')

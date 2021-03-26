@@ -23,4 +23,3 @@ for row_ in range(row - 1):
 print(counter)
 
 
-
