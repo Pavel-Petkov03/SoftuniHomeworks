@@ -25,14 +25,14 @@ while command != 'Reveal':
 			text = [c for c in text]
 			text.insert(int(doing), ' ')
 			text = ''.join(text)
-			print( text )
+			print(text)
 		elif c == 'Reverse':
 			if doing in text:
 				text = text.replace(doing, '', 1)
 				text = ([c for c in text])
 				text.append(doing[::-1])
 				text = ''.join(text)
-				print( text )
+				print(text)
 			else:
 				print('error')
 	else:
