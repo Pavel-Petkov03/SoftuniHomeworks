@@ -113,6 +113,3 @@ entry_row, entry_col = entry_pos(matrix)
 command_line = list(input())
 print(moving_p(entry_row, entry_col, command_line, matrix))
 
-
-
-
