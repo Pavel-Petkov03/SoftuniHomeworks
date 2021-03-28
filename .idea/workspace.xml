@@ -2,17 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb859ec7-bc92-4c87-960a-b4237978e06c" name="Default Changelist" comment="new commit">
-      <change afterPath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project/section.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02.Programming Fundamentals with Python/03. Основни задачи/Задачи/06. Exercise Lists Basics/08. Seize the Fire.py" beforeDir="false" afterPath="$PROJECT_DIR$/02.Programming Fundamentals with Python/03. Основни задачи/Задачи/06. Exercise Lists Basics/08. Seize the Fire.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02.Programming Fundamentals with Python/03. Основни задачи/Задачи/08. Exercise Functions/10. Array Manipulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/02.Programming Fundamentals with Python/03. Основни задачи/Задачи/08. Exercise Functions/10. Array Manipulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03. Programming Advanced with Python/Основни задачи/02 Lists as Stacks and Queues - Exercise/10. Cups and Bottles.py" beforeDir="false" afterPath="$PROJECT_DIR$/03. Programming Advanced with Python/Основни задачи/02 Lists as Stacks and Queues - Exercise/10. Cups and Bottles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_exam_august/Задачи/bombs.py" beforeDir="false" afterPath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_exam_august/Задачи/bombs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_retake_exam/Задачи/problem_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_retake_exam/Задачи/problem_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_retake_exam_2/Задачи/taxi_express.py" beforeDir="false" afterPath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_retake_exam_2/Задачи/taxi_express.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/guild_system/project/guild.py" beforeDir="false" afterPath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/guild_system/project/guild.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/shop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/car.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/final_zip_files/guild_system.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/final_zip_files/pokemon_battle.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/final_zip_files/spootify.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/guild_system/project/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/guild_system/project/guild.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/guild_system/project/player.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/hero.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/pokemon_battle/project/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/pokemon_battle/project/pokemon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/pokemon_battle/project/trainer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/programmer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/shop.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/spootify/project/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/spootify/project/album.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/spootify/project/band.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/spootify/project/song.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/steam_user.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/try_test/__init__.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
