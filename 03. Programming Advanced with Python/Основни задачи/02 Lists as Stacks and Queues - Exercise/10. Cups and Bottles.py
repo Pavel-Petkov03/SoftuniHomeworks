@@ -1,5 +1,5 @@
 # You will be given a sequence of integers – each indicating a cup's capacity. After that you will be given another
-# sequence of integers – a bottle with water in it. Your job is to try to fill up all the cups.
+# sequence of integers – a bottle with water in it. Your job is to try_test to fill up all the cups.
 # Filling is done by picking exactly one bottle at a time. You must start picking from the last received bottle and
 # start filling from the first entered cup. If the current bottle has N water, you give the first entered cup N water
 # and reduce its integer value by N.
