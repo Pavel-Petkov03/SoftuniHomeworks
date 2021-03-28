@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cb859ec7-bc92-4c87-960a-b4237978e06c" name="Default Changelist" comment="new commit">
+      <change afterPath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project/section.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02.Programming Fundamentals with Python/03. Основни задачи/Задачи/06. Exercise Lists Basics/08. Seize the Fire.py" beforeDir="false" afterPath="$PROJECT_DIR$/02.Programming Fundamentals with Python/03. Основни задачи/Задачи/06. Exercise Lists Basics/08. Seize the Fire.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02.Programming Fundamentals with Python/03. Основни задачи/Задачи/08. Exercise Functions/10. Array Manipulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/02.Programming Fundamentals with Python/03. Основни задачи/Задачи/08. Exercise Functions/10. Array Manipulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03. Programming Advanced with Python/Основни задачи/02 Lists as Stacks and Queues - Exercise/10. Cups and Bottles.py" beforeDir="false" afterPath="$PROJECT_DIR$/03. Programming Advanced with Python/Основни задачи/02 Lists as Stacks and Queues - Exercise/10. Cups and Bottles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_exam_august/Задачи/bombs.py" beforeDir="false" afterPath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_exam_august/Задачи/bombs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_retake_exam/Задачи/problem_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_retake_exam/Задачи/problem_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_retake_exam_2/Задачи/taxi_express.py" beforeDir="false" afterPath="$PROJECT_DIR$/03. Programming Advanced with Python/Тестове/python_advanced_retake_exam_2/Задачи/taxi_express.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/guild_system/project/guild.py" beforeDir="false" afterPath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/guild_system/project/guild.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/shop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/try_test/__init__.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Pavel &lt;elias5247698@abv.bg&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1q1TRjcEIwoJGKFNYpvx6n7XMhk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pavel\PycharmProjects\Softuni\Programming_OOP_with_Python\difining_classes_exercise\todo_list\project" />
+      <recent name="C:\Users\Pavel\PycharmProjects\Softuni\03. Programming Advanced with Python\Тестове" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.section">
+    <configuration name="album" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Softuni" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/spootify/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/spootify/project/album.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="band" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Softuni" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/spootify/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/spootify/project/band.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Softuni" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="section" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Softuni" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project/section.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="song" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Softuni" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/spootify/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/spootify/project/song.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="task" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Softuni" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Programming_OOP_with_Python/difining_classes_exercise/todo_list/project/task.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.section" />
+        <item itemvalue="Python.task" />
+        <item itemvalue="Python.band" />
+        <item itemvalue="Python.album" />
+        <item itemvalue="Python.song" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb859ec7-bc92-4c87-960a-b4237978e06c" name="Default Changelist" comment="" />
+      <created>1616246097489</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616246097489</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Just trying">
+      <created>1616704944945</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616704944945</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Just trying">
+      <created>1616797675401</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1616797675401</updated>
+    </task>
+    <task id="LOCAL-00003" summary="just trying">
+      <created>1616797820987</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616797820987</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/01.Programming Basics with Python" />
+      <path value="$PROJECT_DIR$/01.Programming Basics with Python/03. Основни задачи/Задачи" />
+      <path value="$PROJECT_DIR$/01.Programming Basics with Python/03. Основни задачи/Задачи/01.First Steps in Coding - Lab" />
+      <path value="$PROJECT_DIR$/01.Programming Basics with Python/03. Основни задачи/Задачи/02. First Steps in Coding - Exercise" />
+      <path value="$PROJECT_DIR$/01.Programming Basics with Python/03. Основни задачи/Задачи/03. Conditional Statements - Lab" />
+      <path value="$PROJECT_DIR$/01.Programming Basics with Python/03. Основни задачи/Задачи/04. Conditional Statements - Exercise" />
+      <path value="$PROJECT_DIR$/01.Programming Basics with Python/03. Основни задачи/Задачи/05. Conditional Statements Advanced - Lab" />
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Just trying" />
+    <MESSAGE value="just trying" />
+    <MESSAGE value="new commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="new commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/03. Programming Advanced with Python/10. Functions Advanced - Exercise/12. Recursion Palindrome 1.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/03. Programming Advanced with Python/Основни задачи/tkinter_project/tk_logic.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/03. Programming Advanced with Python/Основни задачи/tkinter_project/tk_logic.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/03. Programming Advanced with Python/Основни задачи/tkinter_project/tk_logic.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/03. Programming Advanced with Python/Основни задачи/tkinter_project/__init__.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/03. Programming Advanced with Python/Основни задачи/tkinter_project/__init__.py</url>
+          <line>3</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Programming_OOP_with_Python/defining_classes_lab/rhombus_of_stars.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Programming_OOP_with_Python/defining_classes_lab/rhombus_of_stars.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,6 +1,6 @@
 # First you will be given a sequence of integers representing males.
 # Afterwards you will be given another sequence of integers representing females.
-# You have to start from the first female and try to match it with the last male.
+# You have to start from the first female and try_test to match it with the last male.
 # •	If their values are equal, you have to match them and remove both of
 # them. Otherwise you should remove only the female and decrease the value of the male by 2.
 # •	If someone’s value is equal to or below 0, you should remove him/her

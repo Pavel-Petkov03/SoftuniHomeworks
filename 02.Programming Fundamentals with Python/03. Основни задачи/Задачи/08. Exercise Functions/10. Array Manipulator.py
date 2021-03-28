@@ -1,7 +1,7 @@
 # Trifon has finally become a junior developer and has received his first task. It's about manipulating an array of
 # integers. He is not quite happy about it, since he hates manipulating arrays. They are going to pay him a lot of money
 # , though, and he is willing to give somebody half of it if to help him do his job. You, on the other hand, love arrays
-# (and money) so you decide to try your luck.
+# (and money) so you decide to try_test your luck.
 # The array may be manipulated by one of the following commands
 # ?	exchange {index} ? splits the array after the given index, and exchanges the places of the two resulting
 # sub-arrays. E.g. [1, 2, 3, 4, 5] -> exchange 2 -> result: [4, 5, 1, 2, 3]

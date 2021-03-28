@@ -23,8 +23,9 @@
 # Constraints
 # •	You will always have at least one customer and at least one taxi
 from collections import deque
-customers = deque(list(map(int , input().split(', '))))
-taxis = list(map(int , input().split(', ')))
+
+customers = deque(list(map(int, input().split(', '))))
+taxis = list(map(int, input().split(', ')))
 all_time = 0
 while customers and taxis:
     current_customer = customers[0]
@@ -38,7 +39,7 @@ while customers and taxis:
 
 if customers:
     print("Not all customers were driven to their destinations")
-    print(f"Customers left: {', '.join(list(map(str , customers)))}")
+    print(f"Customers left: {', '.join(list(map(str, customers)))}")
 else:
     print(f"All customers were driven to their destinations")
     print(f"Total time: {all_time} minutes")

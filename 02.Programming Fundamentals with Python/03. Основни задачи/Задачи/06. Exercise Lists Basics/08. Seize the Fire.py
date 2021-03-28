@@ -17,7 +17,7 @@
 # Its value is equal to 25% of the cell’s value.
 # In the end you will have to print the total effort.
 # Keep putting out cells until you run out of water.
-# If you don’t have enough water to put out a given cell – skip it and try the next one.
+# If you don’t have enough water to put out a given cell – skip it and try_test the next one.
 # In the end, print the cells you have put out in the following format:
 # "Cells:
 #  - {cell1}
