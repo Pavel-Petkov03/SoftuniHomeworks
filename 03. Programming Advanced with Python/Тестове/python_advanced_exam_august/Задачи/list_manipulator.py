@@ -56,6 +56,4 @@ def list_manipulator(*args):
 
 
 
-
-
 print(list_manipulator([1, 2, 3], "add", "beginning", 20, 30, 40))
