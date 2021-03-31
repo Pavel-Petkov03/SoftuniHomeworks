@@ -4,6 +4,7 @@ class Library:
         self.user_records = []
         self.books_available = {}
         self.rented_books = {}
+
     def add_user(self, user):
         if user in self.user_records:
             return f"User with id = {user.user_id} already registered in the library!"
