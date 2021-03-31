@@ -10,22 +10,19 @@ def swap(c):
     c[1], c[-1] = c[-1], c[1]
     return "".join(c)
 
-res=[]
+
+res = []
 
 for key in text:
     list_of_str = []
     first_list = [i for i in key if i.isdigit()]
-    list_of_str.insert(0,chr(int("".join(first_list))))
+    list_of_str.insert(0, chr(int("".join(first_list))))
     [list_of_str.append(j) for j in key if not j.isdigit()]
 
     res.append(swap(list_of_str))
     first_list.clear()
     list_of_str.clear()
 
-res=" ".join(res)
+res = " ".join(res)
 
 print(res)
-
-
-
-
