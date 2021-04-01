@@ -1,4 +1,4 @@
-from room import Room
+
 
 
 class Hotel:
@@ -22,21 +22,26 @@ class Hotel:
         find = self.find_room(room_number, self.rooms)
         if find:
             actual_index = find[0]
-            if self.rooms[actual_index].guests + people <= self.rooms[actual_index].capacity:
-                self.rooms[actual_index].guests += people
-                self.guests += people
-                self.rooms[actual_index].is_taken = True
+            self.rooms[actual_index].take_room(people)
 
     def free_room(self, room_number):
         find = self.find_room(room_number, self.rooms)
         if find:
-            number = find[0]
-            self.guests -= self.rooms[number].guests
-            self.rooms[number].guests = 0
-            self.rooms[number].is_taken = False
+            actual_index = find[0]
+            self.rooms[actual_index].free_room()
 
     def print_status(self):
-        result = f'Hotel {self.name} has {self.guests} total guests\n'
-        result += f'Free rooms: {", ".join([str(room.number) for room in self.rooms if not room.is_taken])}\n'
-        result += f'Taken rooms: {", ".join([str(room.number) for room in self.rooms if room.is_taken])}'
+        result = ''
+        free = ", ".join([str(room.number) for room in self.rooms if not room.is_taken])
+        taken = ", ".join([str(room.number) for room in self.rooms if room.is_taken])
+        if self.guests:
+            result += f'Hotel {self.name} has {self.guests} total guests\n'
+        if free:
+            result += f'Free rooms: {free}\n'
+        if taken:
+            result += f'Taken rooms: {taken}'
         print(result)
+
+
+
+
