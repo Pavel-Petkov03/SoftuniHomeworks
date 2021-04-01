@@ -7,25 +7,25 @@
 # •	__repr__ - returns the string (single line): "The students in {class_name}: {students}. Average grade: "{get_average_grade()}". The students must be seperated by ", "
 
 class Class:
-	__students_count = 22
+    __students_count = 22
 
-	def __init__(self, name):
-		self.name = name
-		self.students = []
-		self.grades = []
+    def __init__(self, name):
+        self.name = name
+        self.students = []
+        self.grades = []
 
-	def add_student(self, name, grade):
-		if Class.__students_count:
-			Class.__students_count -= 1
-			self.students.append(name)
-			self.grades.append(float(grade))
+    def add_student(self, name, grade):
+        if Class.__students_count:
+            Class.__students_count -= 1
+            self.students.append(name)
+            self.grades.append(float(grade))
 
-	def get_average_grade(self):
-		return sum(self.grades) / len(self.students)
+    def get_average_grade(self):
+        return sum(self.grades) / len(self.students)
 
-	def __repr__(self):
-		score = self.get_average_grade()
-		return f"The students in {self.name}: {', '.join(self.students)}. Average grade: {score:.2f}"
+    def __repr__(self):
+        score = self.get_average_grade()
+        return f"The students in {self.name}: {', '.join(self.students)}. Average grade: {score:.2f}"
 
 
 a_class = Class("11B")
