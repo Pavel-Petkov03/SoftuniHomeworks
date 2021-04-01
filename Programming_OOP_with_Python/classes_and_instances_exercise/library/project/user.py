@@ -39,4 +39,3 @@ class User:
 
     def __str__(self):
         return f"{self.user_id}, {self.username}, {self.books}"
-

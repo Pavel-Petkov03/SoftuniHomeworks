@@ -1,6 +1,3 @@
-
-
-
 class Album:
     def __init__(self, name, *songs):
         self.name = name
