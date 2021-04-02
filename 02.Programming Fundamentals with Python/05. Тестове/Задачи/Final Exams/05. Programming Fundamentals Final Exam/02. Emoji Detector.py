@@ -27,27 +27,26 @@
 # Constraints
 # There will always be at least one digit in the text!
 import re
+
 pattern_name = r'([:*])\1(?P<name>([A-Z][a-z]{2,}))\1\1'
 text = input()
 our_list = []
-average_p = [int(c.group()) for c in re.finditer('\d' ,text )]
+average_p = [int(c.group()) for c in re.finditer('\d', text)]
 average = 1
 for z in average_p:
-	average*= z
+    average *= z
 em = []
-for c in re.finditer(pattern_name , text):
-	b = c.groupdict()
-	initial_p = sum([ord(p) for p in b['name']])
-	em.append(c.group())
-	if initial_p > average:
-		our_list.append(c.group())
-
+for c in re.finditer(pattern_name, text):
+    b = c.groupdict()
+    initial_p = sum([ord(p) for p in b['name']])
+    em.append(c.group())
+    if initial_p > average:
+        our_list.append(c.group())
 
 if len(em) == 0:
-	pass
+    pass
 else:
-	print(f'Cool threshold: {average}')
-	print(f'{len(em)} emojis found in the text. The cool ones are:')
-	for i in our_list:
-		print(i)
-
+    print(f'Cool threshold: {average}')
+    print(f'{len(em)} emojis found in the text. The cool ones are:')
+    for i in our_list:
+        print(i)
