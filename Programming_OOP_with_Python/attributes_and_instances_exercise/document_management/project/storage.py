@@ -5,7 +5,10 @@ class Storage:
         self.documents = []
 
     def __repr__(self):
-        pass
+        result = ''
+        for doc in self.documents:
+            result += str(doc)
+        return result
 
     @staticmethod
     def find_id_in_list_with_objects_and_return_object(my_list_of_objects, id_):
@@ -17,11 +20,11 @@ class Storage:
 
     def add_topic(self, topic):
         if topic not in self.topics:
-            self.categories.append(topic)
+            self.topics.append(topic)
 
     def add_document(self, document):
         if document not in self.documents:
-            self.categories.append(document)
+            self.documents.append(document)
 
     def edit_category(self, category_id: int, new_name: str):
         obj_index = self.find_id_in_list_with_objects_and_return_object(self.categories, category_id)
@@ -29,21 +32,24 @@ class Storage:
 
     def edit_topic(self, topic_id: int, new_topic: str, new_storage_folder: str):
         obj_index = self.find_id_in_list_with_objects_and_return_object(self.topics, topic_id)
-        self.topics[obj_index].name = new_topic
-        self.topics[obj_index].storage_folder = new_storage_folder
-
+        self.topics[obj_index].edit(new_topic, new_storage_folder)
 
     def edit_document(self, document_id: int, new_file_name: str):
-        pass
+        obj_index = self.find_id_in_list_with_objects_and_return_object(self.documents, document_id)
+        self.documents[obj_index].file_name = new_file_name
 
     def delete_category(self, category_id):
-        pass
+        obj_index = self.find_id_in_list_with_objects_and_return_object(self.categories, category_id)
+        self.categories.pop(obj_index)
 
     def delete_topic(self, topic_id):
-        pass
+        obj_index = self.find_id_in_list_with_objects_and_return_object(self.topics, topic_id)
+        self.topics.pop(obj_index)
 
     def delete_document(self, document_id):
-        pass
+        obj_index = self.find_id_in_list_with_objects_and_return_object(self.documents, document_id)
+        self.documents.pop(obj_index)
 
     def get_document(self, document_id):
-        pass
+        obj_index = self.find_id_in_list_with_objects_and_return_object(self.documents, document_id)
+        return self.documents[obj_index]

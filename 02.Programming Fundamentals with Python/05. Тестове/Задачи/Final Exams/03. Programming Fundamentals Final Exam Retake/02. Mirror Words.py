@@ -26,10 +26,10 @@ import re
 text = input()
 valid = []
 mirror = []
-pattern = r'([@#])(?P<first>([A-Za-z][A-Za-z][A-Za-z]+))\1\1(?P<second>([A-Za-z][A-Za-z][A-Za-z]+))\1'
+pattern = r'([@#])(?P<first>([A-Za-z]{2,}+))\1\1(?P<second>([A-Za-z]{2,}+))\1'
 for c in re.finditer(pattern, text):
 	p = c.groupdict()
-	valid.append({p['first']:p['second']})
+	valid.append(p)
 	if p['first'] == p['second'][::-1]:
 		mirror.append(f"{p['first']} <=> {p['second']}")
 
