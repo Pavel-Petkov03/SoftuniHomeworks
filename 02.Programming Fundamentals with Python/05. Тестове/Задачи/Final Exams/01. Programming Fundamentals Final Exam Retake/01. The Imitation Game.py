@@ -19,25 +19,22 @@
 our_str = input()
 command = input()
 while command != 'Decode':
-	command = command.split("|")
-	if command[0] == 'Move':
-		_, place = command
-		place = int(place)
-		our_str = [c for c in our_str]
-		our_str = ''.join(our_str[place:] + our_str[:place])
+    command = command.split("|")
+    if command[0] == 'Move':
+        _, place = command
+        place = int(place)
+        our_str = [c for c in our_str]
+        our_str = ''.join(our_str[place:] + our_str[:place])
 
-	elif command[0] == 'Insert':
-		_, index , value = command
-		our_str = [c for c in our_str]
-		our_str.insert(int(index) , value)
-		our_str = ''.join(our_str)
+    elif command[0] == 'Insert':
+        _, index, value = command
+        our_str = [c for c in our_str]
+        our_str.insert(int(index), value)
+        our_str = ''.join(our_str)
 
-	elif command[0] == 'ChangeAll':
-		_, old, new = command
-		our_str = our_str.replace(old , new)
-	command = input()
+    elif command[0] == 'ChangeAll':
+        _, old, new = command
+        our_str = our_str.replace(old, new)
+    command = input()
 
 print(f'The decrypted message is: {our_str}')
-
-
-

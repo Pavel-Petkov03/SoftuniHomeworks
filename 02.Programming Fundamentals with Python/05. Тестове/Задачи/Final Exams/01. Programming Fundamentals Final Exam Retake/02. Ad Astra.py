@@ -20,22 +20,18 @@
 # # "You have food to last you for: {days} days!"
 # # •	The output for each food item should look like this:
 # # "Item: {item name}, Best before: {expiration date}, Nutrition: {calories}"
-# from collections import deque
-# import re
-# pattern = r'([#|])(?P<item_name>([A-Za-z\s])+)\1(?P<period>\d{2}/\d{2}/\d{2})\1(?P<calories>\d+)\1'
-# all_ = 0
-# our_list =[]
-# for r in re.finditer(pattern, input()):
-# 	c = r.group()
-# 	b = r.groupdict()
-# 	all_ += int(b['calories'])
-# 	our_list.append([b['item_name'], b['period'], b['calories']])
-#
-# days = all_ // 2000
-# print(f'You have food to last you for: {days} days!')
-# for index in range(len(our_list)):
-# 	print(f'Item: {our_list[index][0]}, Best before: {our_list[index][1]}, Nutrition: {our_list[index][2]}')
-#
-#
-#
+import re
 
+pattern = r'([#|])(?P<item_name>([A-Za-z\s])+)\1(?P<period>\d{2}/\d{2}/\d{2})\1(?P<calories>\d+)\1'
+all_ = 0
+our_list = []
+for r in re.finditer(pattern, input()):
+    c = r.group()
+    b = r.groupdict()
+    all_ += int(b['calories'])
+    our_list.append([b['item_name'], b['period'], b['calories']])
+
+days = all_ // 2000
+print(f'You have food to last you for: {days} days!')
+for index in range(len(our_list)):
+    print(f'Item: {our_list[index][0]}, Best before: {our_list[index][1]}, Nutrition: {our_list[index][2]}')

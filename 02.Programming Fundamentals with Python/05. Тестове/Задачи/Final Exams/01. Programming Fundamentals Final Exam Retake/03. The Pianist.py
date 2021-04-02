@@ -35,39 +35,34 @@
 pattern_dict = {}
 n = int(input())
 for t in range(n):
-	piece, composer, key = input().split("|")
-	pattern_dict[piece] = [composer, key]
+    piece, composer, key = input().split("|")
+    pattern_dict[piece] = [composer, key]
 
 command = input()
 while command != 'Stop':
-	command = command.split("|")
-	if command[0] == 'Add':
-		_, piece, composer, key = command
-		if piece in pattern_dict:
-			print(f'{piece} is already in the collection!')
-		else:
-			print(f'{piece} by {composer} in {key} added to the collection!')
-			pattern_dict[piece] = [composer, key]
-	elif command[0] == 'Remove':
-		_, piece = command
-		if piece in pattern_dict:
-			pattern_dict.pop(piece)
-			print(f'Successfully removed {piece}!')
-		else:
-			print(f'Invalid operation! {piece} does not exist in the collection.')
-	elif command[0] == 'ChangeKey':
-		_, piece , new_key= command
-		if piece in pattern_dict:
-			pattern_dict[piece][1] = new_key
-			print(f'Changed the key of {piece} to {new_key}!')
-		else:
-			print(f'Invalid operation! {piece} does not exist in the collection.')
-	command = input()
+    command = command.split("|")
+    if command[0] == 'Add':
+        _, piece, composer, key = command
+        if piece in pattern_dict:
+            print(f'{piece} is already in the collection!')
+        else:
+            print(f'{piece} by {composer} in {key} added to the collection!')
+            pattern_dict[piece] = [composer, key]
+    elif command[0] == 'Remove':
+        _, piece = command
+        if piece in pattern_dict:
+            pattern_dict.pop(piece)
+            print(f'Successfully removed {piece}!')
+        else:
+            print(f'Invalid operation! {piece} does not exist in the collection.')
+    elif command[0] == 'ChangeKey':
+        _, piece, new_key = command
+        if piece in pattern_dict:
+            pattern_dict[piece][1] = new_key
+            print(f'Changed the key of {piece} to {new_key}!')
+        else:
+            print(f'Invalid operation! {piece} does not exist in the collection.')
+    command = input()
 
 for key, value in sorted(pattern_dict.items(), key=lambda x: (x[0], x[1][0])):
-	print(f'{key} -> Composer: {value[0]}, Key: {value[1]}')
-
-
-
-
-
+    print(f'{key} -> Composer: {value[0]}, Key: {value[1]}')
