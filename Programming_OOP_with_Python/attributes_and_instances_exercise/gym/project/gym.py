@@ -12,7 +12,7 @@ class Gym:
 
     @staticmethod
     def get_object_by_id(initial_id, list_of_objects):
-        return [idi for idi in list_of_objects if idi.id == initial_id][0]
+        return [idi for idi in list_of_objects if idi.id_ == initial_id][0]
 
     def add_customer(self, customer):
         if self.check_if_object_in_list(customer, self.customers):
@@ -39,4 +39,5 @@ class Gym:
         customer_object = self.get_object_by_id(subscription_object.customer_id, self.customers)
         trainer_object = self.get_object_by_id(subscription_object.trainer_id, self.trainers)
         equipment_object = self.get_object_by_id(subscription_object.exercise_id, self.equipment)
+
         return str(customer_object) + str(trainer_object) + str(equipment_object)
