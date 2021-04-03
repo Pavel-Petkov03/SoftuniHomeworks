@@ -1,9 +1,10 @@
 class ExercisePlan:
+    id_ = 1
+
     def __init__(self, trainer_id, equipment_id, duration):
         self.trainer_id = trainer_id
         self.equipment_id = equipment_id
         self.duration = duration
-        self.id = 1
 
     @classmethod
     def from_hours(cls, trainer_id: int, equipment_id: int, hours: int):
@@ -11,7 +12,7 @@ class ExercisePlan:
 
     @staticmethod
     def get_next_id():
-        pass
+        ExercisePlan.id_ += 1
 
     def __repr__(self):
-        return f"Plan <{self.id}> with duration {self.duration} minutes"
+        return f"Plan <{ExercisePlan.id_}> with duration {self.duration} minutes"
