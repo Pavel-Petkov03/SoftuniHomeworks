@@ -9,3 +9,4 @@ class Equipment:
     @staticmethod
     def get_next_id():
         return Equipment.id_ + 1
+

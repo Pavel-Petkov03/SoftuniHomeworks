@@ -16,14 +16,17 @@ class Gym:
 
     def add_customer(self, customer):
         if self.check_if_object_in_list(customer, self.customers):
+            customer._id += 1
             self.customers.append(customer)
 
     def add_trainer(self, trainer):
         if self.check_if_object_in_list(trainer, self.trainers):
+            trainer._id += 1
             self.trainers.append(trainer)
 
     def add_equipment(self, equipment):
         if self.check_if_object_in_list(equipment, self.equipment):
+            equipment._id += 1
             self.equipment.append(equipment)
 
     def add_plan(self, plan):
