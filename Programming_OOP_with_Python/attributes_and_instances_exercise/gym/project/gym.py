@@ -7,7 +7,7 @@ class Gym:
         self.equipment = []
         self.plans = []
         self.subscriptions = []
-        self.id = self.get_plan_id()
+        self.id = 1
 
     @staticmethod
     def check_if_object_in_list(obj, list_with_objects):
