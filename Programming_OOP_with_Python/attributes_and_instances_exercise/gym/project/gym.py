@@ -51,3 +51,4 @@ class Gym:
 
         objects = [subscription_object, customer_object, trainer_object, equipment_object,plan_object]
         return '\n'.join([str(obj) for obj in objects])
+#need to complete the logic of the id and to check the tests in the __init__ py
