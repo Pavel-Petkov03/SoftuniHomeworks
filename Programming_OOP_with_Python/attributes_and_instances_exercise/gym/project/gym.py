@@ -1,10 +1,13 @@
 class Gym:
+    id_ = 0
+
     def __init__(self):
         self.customers = []
         self.trainers = []
         self.equipment = []
         self.plans = []
         self.subscriptions = []
+        self.id = self.get_plan_id()
 
     @staticmethod
     def check_if_object_in_list(obj, list_with_objects):
@@ -12,12 +15,12 @@ class Gym:
 
     @staticmethod
     def get_object_by_id(initial_id, list_of_objects):
-        return [idi for idi in list_of_objects if idi.id_ == initial_id][0]
+        return [idi for idi in list_of_objects if idi.id == initial_id][0]
 
     @staticmethod
     def get_plan_id():
-        pass
-
+        Gym.id_ += 1
+        return Gym.id_
 
     def add_customer(self, customer):
         if self.check_if_object_in_list(customer, self.customers):
@@ -44,8 +47,7 @@ class Gym:
         customer_object = self.get_object_by_id(subscription_object.customer_id, self.customers)
         trainer_object = self.get_object_by_id(subscription_object.trainer_id, self.trainers)
         equipment_object = self.get_object_by_id(subscription_object.exercise_id, self.equipment)
-        pass
-        # Todo
-        # plan_object function by getting another id
+        plan_object = [obj for obj in self.plans if obj.trainer_id == trainer_object.id][0]
 
-        return str(customer_object) + str(trainer_object) + str(equipment_object)
+        objects = [subscription_object, customer_object, trainer_object, equipment_object,plan_object]
+        return '\n'.join([str(obj) for obj in objects])
