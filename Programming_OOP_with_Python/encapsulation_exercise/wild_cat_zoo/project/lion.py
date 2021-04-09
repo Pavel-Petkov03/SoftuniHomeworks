@@ -2,7 +2,7 @@ class Lion:
     NEEDED_MONEY_FOR_LION = 50
     NAME_OF_KIND = 'Lion'
 
-    def __init__(self, name, age, gender):
+    def __init__(self, name, gender, age):
         self.name = name
         self.age = age
         self.gender = gender

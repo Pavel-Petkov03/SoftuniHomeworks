@@ -1,4 +1,5 @@
 class Vet:
+    NAME_OF_KIND = 'Vet'
     def __init__(self, name, age, salary):
         self.age = age
         self.salary = salary

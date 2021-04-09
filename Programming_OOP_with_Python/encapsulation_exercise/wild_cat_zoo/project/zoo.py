@@ -1,4 +1,3 @@
-
 class Zoo:
     def __init__(self, name, budget, animals_capacity, workers_capacity):
         self.__animals_capacity = animals_capacity
@@ -12,7 +11,7 @@ class Zoo:
         if len(self.animals) < self.__animals_capacity and self.__budget >= price:
             self.__budget -= price
             self.animals.append(animal)
-            return f"{self.name} the {animal.NAME_OF_KIND} added to the zoo"
+            return f"{animal.name} the {animal.NAME_OF_KIND} added to the zoo"
         elif self.__budget < price:
             return "Not enough budget"
         else:
@@ -21,7 +20,7 @@ class Zoo:
     def hire_worker(self, worker):
         if self.__workers_capacity > len(self.workers):
             self.workers.append(worker)
-            return f"{self.name} the {worker.NAME_OF_KIND} hired successfully"
+            return f"{worker.name} the {worker.NAME_OF_KIND} hired successfully"
         return "Not enough space for worker"
 
     def fire_worker(self, worker_name):
@@ -44,7 +43,7 @@ class Zoo:
             return f"You tended all the animals. They are happy. Budget left: {self.__budget}"
         return "You have no budget to tend the animals. They are unhappy."
 
-    def profit(self,amount):
+    def profit(self, amount):
         self.__budget += amount
 
     def animals_status(self):
@@ -54,7 +53,25 @@ class Zoo:
         filtered_tigers = [tiger for tiger in self.animals if tiger.NAME_OF_KIND == 'Tiger']
         result += f'----- {len(filters_lions)} Lions:\n'
         for lion in filters_lions:
-            result += str(lion)
+            result += f'{str(lion)}\n'
+        result += f'----- {len(filtered_tigers)} Tigers:\n'
+        for tiger in filtered_tigers:
+            result += f'{str(tiger)}\n'
+        result += f'----- {len(filtered_cheetahs)} Cheetahs:\n'
+        result += '\n'.join([f'{str(cheetah)}' for cheetah in filtered_cheetahs])
+        return result
 
-
-
+    def workers_status(self):
+        result = f'You have {len(self.workers)} workers\n'
+        filtered_keepers = [keeper for keeper in self.workers if keeper.NAME_OF_KIND == 'Keeper']
+        filtered_vets = [vet for vet in self.workers if vet.NAME_OF_KIND == 'Vet']
+        filtered_caretakers = [caretaker for caretaker in self.workers if caretaker.NAME_OF_KIND == 'Caretaker']
+        result += f'----- {len(filtered_keepers)} Keepers:\n'
+        result += f'\n'.join([str(keeper) for keeper in filtered_keepers])
+        result += '\n'
+        result += f'----- {len(filtered_caretakers)} Caretakers:\n'
+        result += '\n'.join([str(caretaker) for caretaker in filtered_caretakers])
+        result += '\n'
+        result += f'----- {len(filtered_vets)} Vets:\n'
+        result += '\n'.join([str(vet) for vet in filtered_vets])
+        return result
