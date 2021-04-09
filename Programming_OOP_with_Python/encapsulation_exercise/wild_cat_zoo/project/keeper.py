@@ -1,4 +1,5 @@
 class Keeper:
+    NAME_OF_KIND = 'Keeper'
     def __init__(self, name, age, salary):
         self.age = age
         self.salary = salary

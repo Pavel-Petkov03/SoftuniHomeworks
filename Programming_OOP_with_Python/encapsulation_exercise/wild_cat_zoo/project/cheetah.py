@@ -2,7 +2,7 @@ class Cheetah:
     NEEDED_MONEY_FOR_Cheetah = 60
     NAME_OF_KIND = 'Cheetah'
 
-    def __init__(self, name, age, gender):
+    def __init__(self, name, gender, age):
         self.name = name
         self.age = age
         self.gender = gender
