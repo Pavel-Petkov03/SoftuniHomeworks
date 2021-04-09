@@ -1,4 +1,4 @@
-from topping import Topping
+
 
 
 class Pizza:
@@ -32,7 +32,7 @@ class Pizza:
     def toppings_capacity(self, new_value):
         self.__toppings_capacity = new_value
 
-    def add_topping(self, topping, Topping):
+    def add_topping(self, topping):
         if self.__toppings_capacity == len(self.__toppings):
             raise ValueError('Not enough space for another topping')
         elif topping.topping_type in self.__toppings:
