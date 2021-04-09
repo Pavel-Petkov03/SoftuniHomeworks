@@ -1,6 +1,6 @@
 class Zoo:
     def __init__(self, name, budget, animals_capacity, workers_capacity):
-        self.__animals_capacity = animals_capacity
+        self.__animal_capacity = animals_capacity
         self.__workers_capacity = workers_capacity
         self.__budget = budget
         self.name = name
@@ -8,7 +8,7 @@ class Zoo:
         self.workers = []
 
     def add_animal(self, animal, price):
-        if len(self.animals) < self.__animals_capacity and self.__budget >= price:
+        if len(self.animals) < self.__animal_capacity and self.__budget >= price:
             self.__budget -= price
             self.animals.append(animal)
             return f"{animal.name} the {animal.NAME_OF_KIND} added to the zoo"
@@ -75,3 +75,4 @@ class Zoo:
         result += f'----- {len(filtered_vets)} Vets:\n'
         result += '\n'.join([str(vet) for vet in filtered_vets])
         return result
+
