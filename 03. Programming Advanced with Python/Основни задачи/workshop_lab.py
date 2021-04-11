@@ -7,7 +7,8 @@ def print_matrix(m):
 
 
 def win_situation(m, special_number):
-    if horizontal_checker(m, special_number) or vertical_checker(m, special_number) or down_up_diagonal_checker(m,special_number) \
+    if horizontal_checker(m, special_number) or vertical_checker(m, special_number) or down_up_diagonal_checker(m,
+                                                                                                                special_number) \
             or up_down_diagonal_checker(m, special_number):
         return True
     return False
