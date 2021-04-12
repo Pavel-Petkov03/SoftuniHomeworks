@@ -1,5 +1,5 @@
-from project.animal import Animal
-from project.dog import Dog
+from person.project import Animal
+from person.project import Dog
 
 
 class Teacher(Animal, Dog):
