@@ -1,9 +1,8 @@
 from project.food.main_dish import MainDish
 
 
-# slamon maindish
-
 class Salmon(MainDish):
     GRAMS = 22
-    def __init__(self,name , price):
-        super().__init__(name , price , self.GRAMS)
+
+    def __init__(self, name, price):
+        super().__init__(name, price, self.GRAMS)

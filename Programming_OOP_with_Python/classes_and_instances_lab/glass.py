@@ -1,9 +1,10 @@
 class Glass:
     capacity = 250
+
     def __init__(self):
         self.content = 0
 
-    def fill(self,ml):
+    def fill(self, ml):
         if self.get_capacity() >= ml:
             self.content += ml
             return f"Glass filled with {ml} ml"
@@ -17,7 +18,8 @@ class Glass:
         return f"{self.get_capacity()} ml left"
 
     def get_capacity(self):
-        return Glass.capacity-self.content
+        return Glass.capacity - self.content
+
 
 glass = Glass()
 print(glass.fill(100))
