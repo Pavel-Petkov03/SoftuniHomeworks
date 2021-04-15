@@ -6,12 +6,11 @@ class Food(ABC):
         self.quantity = q
 
 
-
-class Vegetable(Food):
+class Fruit(Food):
     pass
 
 
-class Fruit(Food):
+class Vegetable(Food):
     pass
 
 
