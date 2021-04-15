@@ -1,7 +1,6 @@
-from Programming_OOP_with_Python.polymorphism_exercise.wild_farm.project.animals.birds import Owl
-from Programming_OOP_with_Python.polymorphism_exercise.wild_farm.project.animals.food import Meat, Vegetable
-from animal import Animal
+from project.animals.animal import Animal
 from abc import ABC, abstractmethod
+from project.food import Fruit, Vegetable, Seed, Meat
 
 
 class Mammal(Animal, ABC):
@@ -10,15 +9,7 @@ class Mammal(Animal, ABC):
         self.living_region = living_region
 
     def __repr__(self):
-        return f"{self.name} [{self.__class__.__name__}, {self.weight}, {self.living_region}, {self.food_eaten}]"
-
-    @abstractmethod
-    def make_sound(self):
-        pass
-
-    @abstractmethod
-    def feed(self, food):
-        pass
+        return f"{self.__class__.__name__} [{self.name}, {self.weight}, {self.living_region}, {self.food_eaten}]"
 
 
 class Mouse(Mammal):
@@ -28,12 +19,12 @@ class Mouse(Mammal):
         return "Squeak"
 
     def feed(self, food):
-        current_object_name = food.__name__
+        current_object_name = food.__class__.__name__
         if current_object_name == 'Vegetable' or current_object_name == 'Fruit':
             self.weight += food.quantity * self.current_increase
             self.food_eaten += food.quantity
         else:
-            return f"{self.name} does not eat {food.__name__}!"
+            return f"{self.__class__.__name__} does not eat {current_object_name}!"
 
 
 class Dog(Mammal):
@@ -43,12 +34,12 @@ class Dog(Mammal):
         return "Woof!"
 
     def feed(self, food):
-        current_object_name = food.__name__
+        current_object_name = food.__class__.__name__
         if current_object_name == 'Meat':
             self.weight += food.quantity * self.current_increase
             self.food_eaten += food.quantity
         else:
-            return f"{self.__name__} does not eat {food.__name__}!"
+            return f"{self.__class__.__name__} does not eat {current_object_name}!"
 
 
 class Tiger(Mammal):
@@ -58,12 +49,12 @@ class Tiger(Mammal):
         return "ROAR!!!"
 
     def feed(self, food):
-        current_object_name = food.__name__
+        current_object_name = food.__class__.__name__
         if current_object_name == 'Meat':
             self.weight += food.quantity * self.current_increase
             self.food_eaten += food.quantity
         else:
-            return f"{self.__name__} does not eat {food.__name__}!"
+            return f"{self.__class__.__name__} does not eat {current_object_name}!"
 
 
 class Cat(Mammal):
@@ -73,19 +64,9 @@ class Cat(Mammal):
         return "Meow"
 
     def feed(self, food):
-        current_object_name = food.__name__
+        current_object_name = food.__class__.__name__
         if current_object_name == 'Vegetable' or current_object_name == 'Meat':
             self.weight += food.quantity * self.current_increase
             self.food_eaten += food.quantity
         else:
-            return f"{self.__name__} does not eat {food.__name__}!"
-
-
-owl = Owl("Pip", 10, 10)
-print(owl)
-meat = Meat(4)
-print(owl.make_sound())
-owl.feed(meat)
-veg = Vegetable(1)
-print(owl.feed(veg))
-print(owl)
+            return f"{self.__class__.__name__} does not eat {current_object_name}!"

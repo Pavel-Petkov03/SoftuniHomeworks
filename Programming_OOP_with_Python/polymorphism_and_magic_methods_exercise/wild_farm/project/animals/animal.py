@@ -12,8 +12,9 @@ class Animal(ABC):
     def make_sound(self):
         pass
 
-
-
+    @abstractmethod
+    def feed(self):
+        pass
 
 
 
