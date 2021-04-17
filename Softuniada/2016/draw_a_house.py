@@ -3,7 +3,7 @@ for i in range(n - 1):
     for j in range(2 * n - 1):
         if j + 1 == n - i or j + 1 == n + i:
             print('*', end='')
-        elif j + 1 > n - i and j + 1 < n + i:
+        elif n - i < j + 1 < n + i:
             print(' ', end='')
         elif j + 1 < n - i or j + 1 > n - i:
             print('.', end='')

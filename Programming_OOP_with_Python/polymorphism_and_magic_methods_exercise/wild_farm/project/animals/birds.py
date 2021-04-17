@@ -12,9 +12,16 @@ class Bird(Animal, ABC):
     def __repr__(self):
         return f"{self.__class__.__name__} [{self.name}, {self.wing_size}, {self.weight}, {self.food_eaten}]"
 
+    @abstractmethod
+    def feed(self, food):
+        pass
+
+    @abstractmethod
+    def make_sound(self):
+        pass
+
 
 class Owl(Bird):
-    current_increase = 0.25
 
     def __init__(self, name, weight, wing_size):
         super().__init__(name, weight, wing_size)
@@ -25,14 +32,13 @@ class Owl(Bird):
     def feed(self, food):
         current_object_name = food.__class__.__name__
         if current_object_name == 'Meat':
-            self.weight += food.quantity * self.current_increase
+            self.weight += food.quantity * 0.25
             self.food_eaten += food.quantity
         else:
             return f"{self.__class__.__name__} does not eat {current_object_name}!"
 
 
 class Hen(Bird):
-    current_increase = 0.35
 
     def __init__(self, name, weight, wing_size):
         super().__init__(name, weight, wing_size)
@@ -41,5 +47,5 @@ class Hen(Bird):
         return "Cluck"
 
     def feed(self, food):
-        self.weight += food.quantity * self.current_increase
+        self.weight += food.quantity * 0.35
         self.food_eaten += food.quantity

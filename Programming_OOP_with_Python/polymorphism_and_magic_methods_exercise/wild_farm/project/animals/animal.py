@@ -13,7 +13,7 @@ class Animal(ABC):
         pass
 
     @abstractmethod
-    def feed(self):
+    def feed(self, food):
         pass
 
 

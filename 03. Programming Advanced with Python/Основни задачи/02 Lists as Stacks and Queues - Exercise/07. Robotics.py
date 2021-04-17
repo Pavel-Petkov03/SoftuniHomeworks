@@ -37,14 +37,3 @@ while tasks:
             available_robots = {k: v - 1 for k, v in available_robots.items()}
             timed += timedelta(seconds=1)
             available = [k for k, v in available_robots.items() if v <= 0]
-
-
-
-
-
-
-
-
-
-
-
