@@ -16,7 +16,7 @@ class take_skip:
         self.value += self.step
         return self.result
 
+
 numbers = take_skip(2, 6)
 for number in numbers:
     print(number)
-
