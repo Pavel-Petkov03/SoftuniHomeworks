@@ -55,5 +55,3 @@ while True:
 		kill_counter += 1
 
 
-print(kill_counter)
-
