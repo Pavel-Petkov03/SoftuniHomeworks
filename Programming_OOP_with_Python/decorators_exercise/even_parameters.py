@@ -15,9 +15,10 @@ def even_parameters(function):
 
     return wrapper
 
+
 @even_parameters
 def emp():
     return 'hi'
 
-print(emp)
 
+print(emp)
