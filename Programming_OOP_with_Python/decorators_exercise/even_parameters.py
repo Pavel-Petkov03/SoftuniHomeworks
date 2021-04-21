@@ -5,18 +5,19 @@ def even_parameters(function):
     functools.wraps(function)
 
     def wrapper(*args):
-        for arg in args:
-            if type(arg) is not str and arg % 2 != 0:
+        try:
+            f = function(*args)
+            if f % 2 != 0:
                 return "Please use only even numbers!"
-        return function(*args)
+            return f(*args)
+        except TypeError:
+            return "Please use only even numbers!"
 
     return wrapper
 
-
 @even_parameters
-def add(a, b):
-    return a + b
+def emp():
+    return 'hi'
 
+print(emp)
 
-print(add(2, 4))
-print(add("Peter", 1))
