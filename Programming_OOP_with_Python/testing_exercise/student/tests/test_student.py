@@ -34,39 +34,30 @@ class TestStudent(unittest.TestCase):
         self.assertListEqual(self.student.courses['d'], [])
 
     def test_add_notes_with_existing_course(self):
-        pass
+        result = self.student.add_notes('a', [30, 31, 32])
+        self.assertEqual(result, "Notes have been updated")
+        self.assertDictEqual({'a': [1, 2, 3, [30, 31, 32]], 'b': [3, 4, 5], 'c': [6, 7, 8]}, self.student.courses)
+        self.assertListEqual([1, 2, 3, [30, 31, 32]], self.student.courses['a'])
+
+    def test_add_notes_with_not_existing_course__expected_error(self):
+        with self.assertRaises(Exception)as ex:
+            self.student.add_notes('z', [1, 2])
+        self.assertEqual("Cannot add notes. Course not found.", str(ex.exception))
+
+    def test_leave_course_and_course_in_courses_expected_remove(self):
+        result = self.student.leave_course('a')
+        self.assertEqual(result, 'Course has been removed')
+        self.assertDictEqual({'b': [3, 4, 5], 'c': [6, 7, 8]}, self.student.courses)
+        self.assertTrue('a' not in self.student.courses)
+
+    def test_leave_course_and_course_not_in_courses_expected__exception(self):
+        with self.assertRaises(Exception) as ex:
+            self.student.leave_course('d')
+
+        self.assertEqual("Cannot remove course. Course not found.", str(ex.exception))
 
 
+if __name__ == "__main__":
+    unittest.main()
 
-        """
-        class Student:
-            def __init__(self, name: str, courses=None):
-                if courses is None:
-                    courses = {}
-                self.name = name
-                self.courses = courses  # {course_name: [notes]}
-        
-            def enroll(self, course_name: str, notes, add_course_notes: str = ""):
-                if course_name in self.courses.keys():
-                    [self.courses[course_name].append(x) for x in notes]
-                    return "Course already added. Notes have been updated."
-        
-                if add_course_notes == "Y" or add_course_notes == "":
-                    self.courses[course_name] = notes
-                    return "Course and course notes have been added."
-        
-                self.courses[course_name] = []
-                return "Course has been added."
-        
-            def add_notes(self, course_name, notes):
-                if course_name in self.courses.keys():
-                    self.courses[course_name].append(notes)
-                    return "Notes have been updated"
-                raise Exception("Cannot add notes. Course not found.")
-        
-            def leave_course(self, course_name):
-                if course_name in self.courses.keys():
-                    self.courses.pop(course_name)
-                    return "Course has been removed"
-                raise Exception("Cannot remove course. Course not found.")
-        """
+
