@@ -18,10 +18,13 @@ class HashTable:
         return len(self.keys)
 
     def __setitem__(self, key, value):
-        index = self.hash(key)
-        self.__validate_collisions(index)
-        self.keys[index] = key
-        self.values[index] = value
+        if key in self.keys:
+            self.values[self.keys.index(key)] = value
+        else:
+            index = self.hash(key)
+            self.__validate_collisions(index)
+            self.keys[index] = key
+            self.values[index] = value
 
     def __str__(self):
         return f'{[(self.keys[index] ,self.values[index]) for index in range(len(self.keys)) if self.keys[index]]}'
@@ -59,4 +62,5 @@ table['age'] = 12
 table['value'] = 12
 table['mmama'] = 12
 table['tate'] = 12
+table['tate'] = 33
 print(table)
