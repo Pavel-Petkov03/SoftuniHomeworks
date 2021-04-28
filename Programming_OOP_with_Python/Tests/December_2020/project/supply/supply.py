@@ -1,9 +1,9 @@
-from abc import ABC
 
 
-class Supply(ABC):
+class Supply:
     def __init__(self, i):
         self.__needs_increase = i
+        self.validate()
 
     def validate(self):
         if self.__needs_increase < 0:
