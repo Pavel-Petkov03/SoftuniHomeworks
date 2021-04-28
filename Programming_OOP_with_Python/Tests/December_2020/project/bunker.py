@@ -58,6 +58,8 @@ class Bunker:
                 current_medicine = self.medicine[m]
                 if medicine_type == current_medicine.__name__:
                     current_medicine.apply(survivor)
+                    if survivor.health > 100:
+                        survivor.health = 100
                     self.medicine.pop(m)
                     return f"{survivor.name} healed successfully with {medicine_type}"
 
@@ -67,11 +69,23 @@ class Bunker:
                 current_supply = self.supplies[s]
                 if current_supply.__name__ == sustenance_type:
                     current_supply.apply(survivor)
+                    if survivor.needs > 100:
+                        survivor.needs = 100
                     self.supplies.pop(s)
                     return f"{survivor.name} sustained successfully with {sustenance_type}"
+
+    def pop_food_and_water(self):
+        result = []
+        for value in reversed(self.water):
+            result.append(self.supplies.remove(value))
+        for value in reversed(self.food):
+            result.append(self.supplies.remove(value))
+
+        return result
 
     def next_day(self):
         for sur in self.survivors:
             sur.needs -= 2 * sur.age
-            self.sustain(sur, self.food[-1].__name__)
-            self.sustain(sur, self.water[-1].__name__)
+            self.sustain(sur, self.pop_food_and_water()[0].__name__)
+            self.sustain(sur, self.pop_food_and_water()[1].__name__)
+

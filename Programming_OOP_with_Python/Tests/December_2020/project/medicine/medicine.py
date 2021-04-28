@@ -1,9 +1,10 @@
-from abc import ABC
 
 
-class Medicine(ABC):
+
+class Medicine:
     def __init__(self, h):
         self.__health_increase = h
+        self.validate()
 
     def validate(self):
         if self.__health_increase < 0:
