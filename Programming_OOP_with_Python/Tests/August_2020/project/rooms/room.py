@@ -18,4 +18,4 @@ class Room:
 
     def calculate_expenses(self, *args):
         for element in args:
-            self.expenses += [somebody.cost for somebody in element]
+            self.expenses += [somebody.cost() for somebody in element]

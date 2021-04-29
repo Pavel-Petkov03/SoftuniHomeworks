@@ -4,7 +4,7 @@ from project.appliances.laptop import Laptop
 from project.appliances.tv import TV
 
 
-class OldCouple(Room):
+class YoungCouple(Room):
     room_cost = 20
     appliances = [TV(), Fridge(), Laptop()]
 
