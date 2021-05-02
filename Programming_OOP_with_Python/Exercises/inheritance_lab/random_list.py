@@ -8,3 +8,4 @@ class RandomList(list):
         return self.pop(el_index)
 
 
+# this task must be made with tests form unittest testcase
