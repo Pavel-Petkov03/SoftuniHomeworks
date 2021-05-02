@@ -7,5 +7,3 @@ class RandomList(list):
         el_index = random.randint(0, len(self) - 1)
         return self.pop(el_index)
 
-
-# this task must be made with tests form unittest testcase
