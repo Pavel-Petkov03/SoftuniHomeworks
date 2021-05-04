@@ -9,15 +9,15 @@
         <legend>
             Customer Details
         </legend>
-        <form>
+        <form action="form">
             <div>
                 <label for="first_name">First Name
-                    <input id="first_name" value="George">
+                    <input id="first_name" placeholder="George">
                 </label>
             </div>
             <div>
                 <label for="last_name">Last Name
-                    <input id="last_name" value="Devis">
+                    <input id="last_name" placeholder="Devis">
                 </label>
             </div>
             <div>
@@ -42,16 +42,59 @@
             </div>
             <div>
                 <label for="em">Email
-                    <input type="email" id="em" value="your@email.com">
+                    <input type="email" id="em" placeholder="your@email.com">
                 </label>
 
             </div>
             <div>
                 <label for="ph">Phone
-                    <input id="ph" type="tel">
+                    <input id="ph" type="tel" placeholder="+359885236225">
+                </label>
+            </div>
+            <div>
+                Town:
+                <select>
+                    <option>Varna</option>
+                    <option>Plovdiv</option>
+                    <option>Burgas</option>
+                    <option>Sofia</option>
+                    <option>Pleven</option>
+                </select>
+            </div>
+            <div>
+                <label for="age">Age
+                    <input id="age" type="number" min="18" max="70">
+                </label>
+            </div>
+            <div>
+                <label for="browser">Programming language </label>
+                <input list="browsers" name="browser" id="browser">
+
+                <datalist id="browsers">
+                  <option value="Java">
+                  <option value="PHP">
+                  <option value="JavaScript">
+                  <option value="Python">
+                  <option value="Ruby"><option>
+                    <option value="Other"><option>
+                </datalist>
+            </div>
+            <div>
+                <textarea name="12" id="" cols="20"  placeholder="More information..." rows="5"></textarea>
+            </div>
+            <div>
+                <label for="check" >
+                    <input type="checkbox" id="check">
+                    I agree the Terms and Conditions
+                </label>
+            </div>
+            <div>
+                <label for="sub">
+                    <input type="submit" id="sub" value="Send">
                 </label>
             </div>
         </form>
+
     </fieldset>
 </body>
 </html>
