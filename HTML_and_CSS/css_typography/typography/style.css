@@ -1,0 +1,39 @@
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.heading {
+    font-family: Georgia, serif;
+}
+
+blockquote {
+    border-left: solid 1px rgb(221,221,221);
+    font-style: italic;
+}
+
+
+#name {
+    padding-left: 1050px;
+}
+tr:nth-child(odd) {
+    background : rgb(241, 241, 241);
+}
+tr:nth-child(odd) td {
+    background : rgb(241, 241, 241);
+}
+table td{
+    border : 1px solid rgb(221, 221, 221);
+
+}
+tr:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+th {
+    border-width: 1px;
+}
+table{
+    border-width: 1px;
+}
