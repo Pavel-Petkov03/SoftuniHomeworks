@@ -1,0 +1,19 @@
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
+
+#star {
+    border : solid 1px black;
+    background-color: green;
+    margin-left: 225px;
+    margin-right: 225px;
+    text-align: center;
+}
+
+#email {
+    border : solid 1px black;
+    background-color: yellow;
+    text-underline: none;
+    text-decoration: none;
+    margin-left: 225px;
+    margin-right: 225px;
+    text-align: center;
+}
