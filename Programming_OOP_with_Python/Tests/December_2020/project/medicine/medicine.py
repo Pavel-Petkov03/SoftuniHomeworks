@@ -1,7 +1,7 @@
+from abc import ABC
 
 
-
-class Medicine:
+class Medicine(ABC):
     def __init__(self, h):
         self.__health_increase = h
         self.validate()

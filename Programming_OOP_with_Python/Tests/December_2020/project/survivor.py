@@ -11,7 +11,7 @@ class Survivor:
 
     @name.setter
     def name(self, value):
-        if self.__name == '':
+        if value == '':
             raise ValueError("Name not valid!")
         self.__name = value
 
@@ -21,7 +21,7 @@ class Survivor:
 
     @age.setter
     def age(self, value):
-        if self.__age < 0:
+        if value < 0:
             raise ValueError("Age not valid!")
         self.__age = value
 
@@ -31,7 +31,7 @@ class Survivor:
 
     @health.setter
     def health(self, value):
-        if self.__health < 0:
+        if value < 0:
             raise ValueError("Health not valid!")
         self.__health = value
 
@@ -41,7 +41,7 @@ class Survivor:
 
     @needs.setter
     def needs(self, value):
-        if self.__needs < 0:
+        if value < 0:
             raise ValueError("Needs not valid!")
         self.__needs = value
 
