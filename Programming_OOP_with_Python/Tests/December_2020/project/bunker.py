@@ -59,7 +59,7 @@ class Bunker:
             elif medicine_type == 'Salve':
                 result = self.salves[-1]
             self.medicine.remove(result)
-            survivor.health += result.health_increase
+            result.apply(survivor)
             if survivor.health > 100:
                 survivor.health = 100
             return f"{survivor.name} healed successfully with {medicine_type}"
@@ -72,7 +72,7 @@ class Bunker:
             elif substance_type == 'FoodSupply':
                 result = self.food[-1]
             self.supplies.remove(result)
-            survivor.needs += result.needs_increase
+            result.apply(survivor)
             if survivor.needs > 100:
                 survivor.needs = 100
             return f"{survivor.name} healed successfully with {substance_type}"
