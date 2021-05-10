@@ -12,7 +12,3 @@ class Medicine(ABC):
 
     def apply(self, survivor):
         survivor.health += self.__health_increase
-
-
-
-
