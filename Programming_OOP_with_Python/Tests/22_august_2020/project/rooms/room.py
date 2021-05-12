@@ -34,3 +34,4 @@ class Room:
         for arg in args:
             result += sum([a.get_monthly_expense() for a in arg])
         self.expenses = result
+

@@ -8,3 +8,4 @@ class AloneYoung(Room):
         self.room_cost = 10
         self.appliances = [TV()]
         self.calculate_expenses(self.appliances)
+
