@@ -1,17 +1,14 @@
-from abc import ABC, abstractmethod
 
-
-class Supply(ABC):
-    @abstractmethod
+class Supply:
     def __init__(self, i):
-        self.__needs_increase = i
+        self.needs_increase = i
         self.validate()
 
     def validate(self):
-        if self.__needs_increase < 0:
+        if self.needs_increase < 0:
             raise ValueError("Needs increase cannot be less than zero.")
 
     def apply(self, survivor):
-        survivor.needs += self.__needs_increase
+        survivor.needs += self.needs_increase
 
 

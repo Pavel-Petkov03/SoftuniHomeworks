@@ -3,7 +3,7 @@ class PlayerRepository:
         self.count = 0
         self.players = []
 
-    def add_player(self, player):
+    def add(self, player):
         initial = [p for p in self.players if p.username == player.username]
         if initial:
             raise ValueError(f'Player {player.username} already exists!.')

@@ -3,7 +3,7 @@ class CardRepository:
         self.count = 0
         self.cards = []
 
-    def add_card(self, card):
+    def add(self, card):
         initial = [c for c in self.cards if c.name == card.name]
         if initial:
             raise ValueError(f"Card {card.name} already exists!")

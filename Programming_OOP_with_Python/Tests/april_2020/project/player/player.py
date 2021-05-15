@@ -18,7 +18,6 @@ class Player(ABC):
     def is_dead(self):
         return self.health <= 0
 
-
     @property
     def username(self):
         return self.__username

@@ -1,9 +1,9 @@
 class Survivor:
     def __init__(self, name, age):
-        self.__name = name
-        self.__age = age
-        self.__health = 100
-        self.__needs = 100
+        self.name = name
+        self.age = age
+        self.health = 100
+        self.needs = 100
 
     @property
     def name(self):
