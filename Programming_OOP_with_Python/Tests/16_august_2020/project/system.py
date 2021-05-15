@@ -21,30 +21,29 @@ class System:
     @staticmethod
     def register_express_software(hardware_name, name, capacity_consumption, memory_consumption):
         hard = [h for h in System._hardware if h.name == hardware_name]
-        if hard:
+        new_software_instance = ExpressSoftware(name, capacity_consumption, memory_consumption)
+        try:
             obj = hard[0]
-            new_software_instance = ExpressSoftware(name, capacity_consumption, memory_consumption)
-            try:
-                obj.install(new_software_instance)
-                System._software.append(new_software_instance)
-                return
-            except Exception:
-                return "Software cannot be installed"
-        return "Hardware does not exist"
+            obj.install(new_software_instance)
+            System._software.append(new_software_instance)
+        except IndexError:
+            return "Hardware does not exist"
+        except Exception:
+            return "Software cannot be installed"
 
     @staticmethod
     def register_light_software(hardware_name, name, capacity_consumption, memory_consumption):
         hard = [h for h in System._hardware if h.name == hardware_name]
-        if hard:
+
+        new_software_instance = LightSoftware(name, capacity_consumption, memory_consumption)
+        try:
             obj = hard[0]
-            new_software_instance = LightSoftware(name, capacity_consumption, memory_consumption)
-            try:
-                obj.install(new_software_instance)
-                System._software.append(new_software_instance)
-                return
-            except Exception:
-                return "Software cannot be installed"
-        return "Hardware does not exist"
+            obj.install(new_software_instance)
+            System._software.append(new_software_instance)
+        except IndexError:
+            return "Hardware does not exist"
+        except Exception:
+            return "Software cannot be installed"
 
     @staticmethod
     def release_software_component(hardware_name: str, software_name: str):
@@ -54,6 +53,7 @@ class System:
             return "Some of the components do not exist"
         System._software.remove(software[0])
         hardware[0].uninstall(software[0])
+
     @staticmethod
     def analyze():
         result = [
@@ -64,6 +64,7 @@ class System:
             f'Total Capacity Taken: {int(sum([h.total_used_capacity for h in System._hardware]))} / {int(sum([h.capacity for h in System._hardware]))}'
         ]
         return "\n".join(result)
+
     @staticmethod
     def system_split():
         result = []
@@ -83,7 +84,3 @@ class System:
             ])
         result = "\n".join([j for l in result for j in l])
         return result
-
-
-
-

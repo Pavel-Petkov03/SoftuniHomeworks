@@ -1,7 +1,8 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Supply(ABC):
+    @abstractmethod
     def __init__(self, i):
         self.__needs_increase = i
         self.validate()
