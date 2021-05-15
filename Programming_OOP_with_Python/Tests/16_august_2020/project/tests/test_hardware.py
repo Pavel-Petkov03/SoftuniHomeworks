@@ -21,7 +21,13 @@ class HardwareTests(unittest.TestCase):
             self.hard.install(self.light)
             self.assertEqual(ex.exception, "Software cannot be installed")
 
-    def test_install_func_with_equal_capacity_consumption_append(self):
+    def test_install_func_with_bigger_capacity_consumption_expected_error(self):
+        self.light.memory_consumption = 0
+        with self.assertRaises(Exception) as ex:
+            self.hard.install(self.light)
+            self.assertEqual(ex.exception, "Software cannot be installed")
+
+    def test_install_func_with_equal_capacity_consumption_and_equal_memory_append(self):
         self.light.capacity_consumption = 12
         self.light.memory_consumption = 12
         self.hard.install(self.light)
@@ -33,9 +39,11 @@ class HardwareTests(unittest.TestCase):
         self.hard.install(self.light)
         self.assertEqual(self.hard.software_components, [self.light])
 
+
     def test_uninstall_expect_to_remove_software(self):
         self.light.capacity_consumption = 0
         self.light.memory_consumption = 0
+        self.assertEqual(self.hard.software_components, [])
         self.hard.install(self.light)
         self.assertEqual(self.hard.software_components, [self.light])
         self.hard.uninstall(self.light)

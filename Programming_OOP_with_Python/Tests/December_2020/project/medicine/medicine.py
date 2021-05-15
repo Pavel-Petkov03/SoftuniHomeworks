@@ -1,7 +1,8 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Medicine(ABC):
+    @abstractmethod
     def __init__(self, h):
         self.__health_increase = h
         self.validate()

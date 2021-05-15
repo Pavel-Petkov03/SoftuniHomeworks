@@ -1,0 +1,46 @@
+
+.main-content {
+    max-width: 1000px;
+    margin: 100px;
+
+}
+.main-content-text {
+    width: 52%;
+    display: inline-block;
+    font-family: Poppins , sans-serif;
+}
+
+.main-content-text-icons-row-text {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+p , h5 {
+    margin :0
+}
+.main-content-text-icons-row img {
+    width :50px;
+    vertical-align: top;
+}
+
+#under-paragraph {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 40%;
+    padding-left: 20px;
+}
+h2 {
+    font-family: Montserrat, sans-serif;
+
+}
+
+.main-content-text-icons-row {
+    padding-bottom: 12px;
+}
+p {
+    color: gray;
+}
