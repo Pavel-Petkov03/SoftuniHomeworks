@@ -1,4 +1,4 @@
-<img align="right" src="https://picc.io/p/dD29xjs.png">
+<img align="right" src="https://codeweek-s3.s3.amazonaws.com/event_picture/SoftUni-Logo-Flat.png">
 | Course | Link |
 | --- | --- |
 | Programming Basics with Python | [Link](https://softuni.bg/certificates/details/89260/6eea52b5)  |
