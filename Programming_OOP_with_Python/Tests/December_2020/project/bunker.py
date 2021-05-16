@@ -64,8 +64,8 @@ class Bunker:
                 survivor.health = 100
             return f"{survivor.name} healed successfully with {medicine_type}"
 
-    def sustain(self, survivor, substance_type: str):
-        if survivor.needs_substance:
+    def sustain(self, survivor: Survivor, substance_type: str):
+        if survivor.needs_sustenance:
             result = None
             if substance_type == 'WaterSupply':
                 result = self.water[-1]
@@ -75,11 +75,12 @@ class Bunker:
             result.apply(survivor)
             if survivor.needs > 100:
                 survivor.needs = 100
-            return f"{survivor.name} healed successfully with {substance_type}"
+            return f"{survivor.name} sustained successfully with {substance_type}"
 
     def next_day(self):
         for sur in self.survivors:
             sur.needs -= sur.age * 2
             self.sustain(sur, 'WaterSupply')
             self.sustain(sur, 'FoodSupply')
+
 

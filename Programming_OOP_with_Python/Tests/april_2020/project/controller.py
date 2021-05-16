@@ -51,10 +51,3 @@ class Controller:
         result = '\n'.join(result)
         result += '\n'
         return result
-
-
-co = Controller()
-b = Beginner('aa')
-b.card_repository.cards = [MagicCard('aa'), TrapCard('bb')]
-co.player_repository.players = [b, Advanced('bb')]
-print(co.report())
