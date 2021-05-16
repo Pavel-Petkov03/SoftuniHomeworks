@@ -67,20 +67,17 @@ class System:
 
     @staticmethod
     def system_split():
-        result = []
+        result = ''
         for h in System._hardware:
             if len(h.software_components) == 0:
                 a = None
             else:
                 a = ", ".join([str(s) for s in h.software_components])
-            result.append([
-                f'Hardware Component - {h.name}',
-                f'Express Software Components: {len([s for s in h.software_components if isinstance(s, ExpressSoftware)])}',
-                f'Light Software Components: {len([s for s in h.software_components if isinstance(s, LightSoftware)])}',
-                f'Memory Usage: {int(h.total_used_memory)} / {int(h.memory)}',
-                f'Capacity Usage: {int(h.total_used_capacity)} / {int(h.capacity)}',
-                f'Type: {h.type}',
-                f'Software Components: {a}'
-            ])
-        result = "\n".join([j for l in result for j in l])
+                result += f'Hardware Component - {h.name}\n'
+                result += f'Express Software Components: {len([s for s in h.software_components if isinstance(s, ExpressSoftware)])}\n'
+                result += f'Light Software Components: {len([s for s in h.software_components if isinstance(s, LightSoftware)])}\n'
+                result += f'Memory Usage: {int(h.total_used_memory)} / {int(h.memory)}\n'
+                result += f'Capacity Usage: {int(h.total_used_capacity)} / {int(h.capacity)}\n'
+                result += f'Type: {h.type}\n'
+                result += f'Software Components: {a}'
         return result
