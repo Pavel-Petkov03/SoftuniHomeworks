@@ -1,7 +1,6 @@
 <img align="right" src="https://codeweek-s3.s3.amazonaws.com/event_picture/SoftUni-Logo-Flat.png">
 
-<br/>
-________________
+My courses
 | Course | Link |
 | --- | --- |
 | Programming Basics with Python | [Link](https://softuni.bg/certificates/details/89260/6eea52b5)  |
