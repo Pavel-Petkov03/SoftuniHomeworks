@@ -9,38 +9,69 @@ header.site-title {
     border-bottom: solid 1px black;
 }
 
+.site-title {
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .heading-level-one {
     display: inline-block;
-    width: 100%;
+    width: 76%;
 }
 
 body {
     margin: 10px 600px;
-    max-width: 1000px;
+    max-width: 1300px;
+    font-size :16px;
+    line-height :1.5;
+   font-family: Helvetica, sans-serif;
+
 }
 
 .main-image {
     border: 1px solid black;
     background-color: white;
-    padding: 10px;
-    display: inline-block;
+    padding: 5px;
     height: 200px;
-    vertical-align: top;
+    display: inline;
+    width: 20%;
+
 }
 #inline-p {
     display: inline-block;
-    max-width: 40%;
+    max-width: 49%;
 }
 
 blockquote {
     max-width: 40%;
     display: inline-block;
     color: gray;
+    float : right;
 
 }
-
 #name {
     position: relative;
     top: 0;
     left: 280px
+}
+
+
+.last-image {
+    display: inline-block;
+    border: 1px solid black;
+    background-color: white;
+    padding: 5px;
+    margin-right: 20px;
+    margin-top: 0;
+}
+
+.second-content {
+    display: inline-block;
+    width: 75%;
+    margin: 0;
+}
+
+#heading-level-2 {
+    margin-bottom: 0;
 }
