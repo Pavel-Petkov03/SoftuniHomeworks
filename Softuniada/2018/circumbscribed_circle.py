@@ -34,13 +34,13 @@ def make_main_logic(t: Triangle, c: Circle):
     first_direction = str(math.sqrt(ax_expression ** 2 + ay_expression ** 2))
     second_direction = str(math.sqrt(bx_expression ** 2 + by_expression ** 2))
     third_direction = str(math.sqrt(cx_expression ** 2 + cy_expression ** 2))
-    if first_direction[:first_direction.index('.') + 2] == second_direction[
-                                                           :second_direction.index('.') + 2] == third_direction[
+    if first_direction[:first_direction.index('.') + 3] == second_direction[
+                                                           :second_direction.index('.') + 3] == third_direction[
                                                                                                 :third_direction.index(
-                                                                                                    '.') + 2]:
+                                                                                                    '.') + 3]:
         final[0] = True
-    if str(c.r) == first_direction[:first_direction.index('.') + 2] == second_direction[:second_direction.index(
-            '.') + 2] == third_direction[:third_direction.index('.') + 2]:
+    if str(c.r) == first_direction[:first_direction.index('.') + 3] == second_direction[:second_direction.index(
+            '.') + 3] == third_direction[:third_direction.index('.') + 3]:
         final[1] = True
     return final
 
