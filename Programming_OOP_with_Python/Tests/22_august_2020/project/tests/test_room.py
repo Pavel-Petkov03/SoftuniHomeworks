@@ -27,9 +27,5 @@ class RoomTest(unittest.TestCase):
         self.assertEqual(81, self.r.expenses)
 
 
-
-
-
-
 if __name__ == "__main__":
     unittest.main()

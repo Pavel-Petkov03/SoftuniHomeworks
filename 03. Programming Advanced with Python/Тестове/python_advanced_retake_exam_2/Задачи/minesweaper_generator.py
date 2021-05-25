@@ -7,7 +7,6 @@
 
 import re
 
-
 def increase_function(m, r, c):
     final = 0
     row_template = [0, 1, 1, 1, 0, -1, -1, -1]

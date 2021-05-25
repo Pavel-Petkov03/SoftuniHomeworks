@@ -37,3 +37,5 @@ class Hardware:
 
     def __validate_installation(self, software):
         return self.available_capacity >= software.capacity_consumption and self.available_memory >= software.memory_consumption
+
+print('It happens')
