@@ -1,3 +1,4 @@
+
 class Room:
     def __init__(self, family_name, budget, members_count):
         self.room_cost = 0
@@ -34,4 +35,6 @@ class Room:
         for arg in args:
             result += sum([a.get_monthly_expense() for a in arg])
         self.expenses = result
+
+
 

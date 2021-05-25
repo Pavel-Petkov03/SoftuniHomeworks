@@ -29,33 +29,32 @@ explosion_coordinates = [tuple(map(int, c.split(','))) for c in input().split()]
 
 
 def explosion(r, c, m):
-	removal = m[r][c]
-	m[r][c] = 0
-	row_pos = [-1, -1, -1, 0, 0, 1, 1, 1]
-	col_pos = [-1, 0, 1, -1, 1, -1, 0, 1]
-	for find in range(8):
-		find_row = r + row_pos[find]
-		find_col = c + col_pos[find]
-		if 0 <= find_row < len(m) and 0 <= find_col < len(m[0]) and m[find_row][find_col] > 0:
-			m[find_row][find_col] -= removal
-	return m
+    removal = m[r][c]
+    m[r][c] = 0
+    row_pos = [-1, -1, -1, 0, 0, 1, 1, 1]
+    col_pos = [-1, 0, 1, -1, 1, -1, 0, 1]
+    for find in range(8):
+        find_row = r + row_pos[find]
+        find_col = c + col_pos[find]
+        if 0 <= find_row < len(m) and 0 <= find_col < len(m[0]) and m[find_row][find_col] > 0:
+            m[find_row][find_col] -= removal
+    return m
 
 
 def alive_cells(m):
-	return len([c for a in m for c in a if c > 0])
+    return len([c for a in m for c in a if c > 0])
 
 
 def sum_alive(m):
-	return sum([c for a in m for c in a if c > 0])
-
+    return sum([c for a in m for c in a if c > 0])
 
 
 for tup in explosion_coordinates:
-	exp_row, exp_col = tup
-	place = matrix[exp_row][exp_col]
-	if place > 0:
-		matrix = explosion(exp_row, exp_col, matrix)
+    exp_row, exp_col = tup
+    place = matrix[exp_row][exp_col]
+    if place > 0:
+        matrix = explosion(exp_row, exp_col, matrix)
 
 print(f'Alive cells: {alive_cells(matrix)}')
 print(f'Sum: {sum_alive(matrix)}')
-[print(' '.join(list(map(str, c))))for c in matrix]
+[print(' '.join(list(map(str, c)))) for c in matrix]
