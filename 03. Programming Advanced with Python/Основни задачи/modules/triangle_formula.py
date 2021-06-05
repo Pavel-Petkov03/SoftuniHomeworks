@@ -10,3 +10,5 @@ def triangle(num):
 		fill(index)
 	for index in range(num - 1, 0, -1):
 		fill(index)
+
+

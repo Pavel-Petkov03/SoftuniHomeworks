@@ -52,7 +52,3 @@ class Survivor:
     @property
     def needs_healing(self):
         return self.health < 100
-
-
-
-
