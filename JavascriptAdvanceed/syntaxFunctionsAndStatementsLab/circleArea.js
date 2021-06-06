@@ -1,5 +1,5 @@
 function calculateArea(type){
-    let result = NaN
+    let result;
     if (typeof type == "number"){
         result = (Math.pow(type, 2) * Math.PI).toFixed(2)
     }
