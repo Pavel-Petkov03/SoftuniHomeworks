@@ -1,5 +1,6 @@
 function fruit(string, grams, price) {
-    console.log(`I need $${price.toFixed(2)} to buy ${grams} kilograms ${string}.`)
+    grams /= 1000
+    console.log(`I need $${(price * grams).toFixed(2)} to buy ${grams.toFixed(2)} kilograms ${string}.`)
 }
 
 function biggestDivisor(first, second) {
@@ -65,12 +66,12 @@ function cookingNumbers(num, task1, task2, task3, task4, task5) {
 function validityChecker(x1, y1, x2, y2) {
     let distanceFromX1ToZero = Math.sqrt(x1**2 + y1**2)
     let distanceFromX2ToZero = Math.sqrt(x2**2 + y2**2)
-    if (String(Math.floor(distanceFromX1ToZero)) === distanceFromX1ToZero.toFixed()){
+    if (Math.floor(distanceFromX1ToZero) === distanceFromX1ToZero){
         console.log(`{${x1}, ${y1}} to {${0}, ${0}} is valid`)
     }else{
         console.log(`{${x1}, ${y1}} to {${0}, ${0}} is invalid`)
     }
-    if (String(Math.floor(distanceFromX2ToZero)) === distanceFromX2ToZero.toFixed()){
+    if (Math.floor(distanceFromX2ToZero) === distanceFromX2ToZero){
         console.log(`{${x2}, ${y2}} to {${0}, ${0}} is valid`)
     }else{
         console.log(`{${x2}, ${y2}} to {${0}, ${0}} is invalid`)
@@ -78,12 +79,14 @@ function validityChecker(x1, y1, x2, y2) {
     let xDistance = x1 >= x2 ? x1 - x2 :  x2 - x1
     let yDistance = y1 >= y2 ? y1 - y2 :  y2 - y1
     let distance = Math.sqrt(xDistance**2 + yDistance**2)
-    if(String(Math.floor(distance)) === distance.toFixed()){
+    if(Math.floor(distance) === distance){
         console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is valid`)
     }else{
         console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is invalid`)
     }
 }
+
+validityChecker(3, 0, 0, 4)
 
 
 function roadRider(km, place) {
@@ -122,3 +125,6 @@ function reg(sentence){
     let exp = /[A-Za-z0-9]+/gi;
     return (sentence.match(exp)).join(', ').toUpperCase()
 }
+
+
+
