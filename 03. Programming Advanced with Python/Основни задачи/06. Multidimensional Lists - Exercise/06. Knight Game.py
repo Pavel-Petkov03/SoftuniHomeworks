@@ -17,7 +17,7 @@ initial_rows = int(input())
 matrix = [list(input()) for c in range(initial_rows)]
 kill_counter = 0
 
-def find_biggest_killer(place_row, place_col, m): # initial_place = matrix[place_row][place_col]
+def find_biggest_killer(place_row, place_col, m):
 	row_movement = [-2, - 2, -1, 1, 2, 2, 1, -1]
 	col_movement = [-1, 1, 2, 2, 1, -1, -2, -2]
 	biggest_counter = 0
@@ -53,5 +53,7 @@ while True:
 		kill_row, kill_col = coordinate
 		matrix[kill_row][kill_col] = 0
 		kill_counter += 1
+
+print(kill_counter)
 
 

@@ -17,7 +17,6 @@ function negativePositiveNumbers(array){
         }
     }
    newArray.forEach((x) => console.log(x))
-
 }
 
 function  lastKeyNumbersSequence(times , last){
@@ -31,6 +30,8 @@ function  lastKeyNumbersSequence(times , last){
     }
     console.log(final)
 }
+
+lastKeyNumbersSequence(6 , 3)
 
 function takeTwoSmallest(array){
     return array.sort((a , b) => a-b).slice(0 ,2).join(' ')
@@ -47,6 +48,7 @@ function takeTwoArray(array){
         console.log(firstHalf.length >= secondHalf.length ? firstHalf : secondHalf)
     }
 }
+
 
 
 function pieceOfPie(array , first , second){
@@ -87,24 +89,9 @@ function diagonalSum(matrix){
     console.log([firstDiagonal, secondDiagonal].join(' '))
 }
 
-diagonalSum(
-    [[3, 5, 17],
- [-1, 7, 14],
- [1, -8, 89]]
-
-)
 
 function findEqualNeighbors(matrix){
-    let all = 0
-    for (let row = 0; row < matrix.length; row++){
-        for( let col = 0; col < matrix[row].length; col++){
-            all += findNeighbors(matrix , row , col)
-        }
-    }
-    console.log(all)
-}
-
-function findNeighbors(matrix, row , col){
+    function findNeighbors(matrix, row , col){
     let find = 0
     let symbol = matrix[row][col]
     if ( row+1 >= 0 && row +1 < matrix.length && matrix[row+1][col] === symbol){
@@ -114,14 +101,12 @@ function findNeighbors(matrix, row , col){
         find++
     }
     return find
+    }
+    let all = 0
+    for (let row = 0; row < matrix.length; row++){
+        for( let col = 0; col < matrix[row].length; col++){
+            all += findNeighbors(matrix , row , col)
+        }
+    }
+    console.log(all)
 }
-
-findEqualNeighbors([['2', '3', '4', '7', '0'],
- ['4', '0', '5', '3', '4'],
- ['2', '3', '5', '4', '2'],
- ['9', '8', '7', '5', '4']]
-)
-
-
-
-
