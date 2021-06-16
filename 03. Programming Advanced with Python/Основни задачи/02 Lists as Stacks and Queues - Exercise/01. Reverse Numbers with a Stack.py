@@ -4,6 +4,6 @@
 old = [c for c in input().split()]
 stack = []
 while old:
-	stack.append(old.pop())
+    stack.append(old.pop())
 
 print(' '.join(stack))
