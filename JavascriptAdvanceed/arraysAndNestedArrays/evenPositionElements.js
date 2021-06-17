@@ -28,10 +28,11 @@ function  lastKeyNumbersSequence(times , last){
             final.push(final.slice(final.length - last, final.length).reduce((a , c) => a+c , 0))
         }
     }
-    console.log(final)
+    return final
 }
+lastKeyNumbersSequence(6,
+3)
 
-lastKeyNumbersSequence(6 , 3)
 
 function takeTwoSmallest(array){
     return array.sort((a , b) => a-b).slice(0 ,2).join(' ')
@@ -43,16 +44,16 @@ function takeTwoArray(array){
     let center = Number(array.length/2);
     let [firstHalf , secondHalf] = [array.slice(0 , center) , array.slice(center, array.length)];
     if (firstHalf.length === secondHalf.length){
-        console.log(secondHalf)
+        return secondHalf
     }else{
-        console.log(firstHalf.length >= secondHalf.length ? firstHalf : secondHalf)
+        return firstHalf.length >= secondHalf.length ? firstHalf : secondHalf
     }
 }
 
 
 
 function pieceOfPie(array , first , second){
-    console.log(array.slice(array.indexOf(first) , array.indexOf(second) + 1))
+    return  array.slice(array.indexOf(first) , array.indexOf(second) + 1)
 }
 
 
