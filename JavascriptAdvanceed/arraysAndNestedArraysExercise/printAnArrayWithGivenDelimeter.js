@@ -28,23 +28,12 @@ function addAndRemove(array){
 }
 
 
-
 function  rotateArray(array , number){
     for(let index = 0; index < number; index++){
         array.unshift(array.pop())
     }
     return array.join(' ')
 }
-
-console.log(
-rotateArray(
-    ['1',
-'2',
-'3',
-'4'],
-2
-
-))
 
 function  createDecreasingSubsequence(array){
     let newArray = []
@@ -58,27 +47,38 @@ function  createDecreasingSubsequence(array){
     return newArray
 }
 
-console.log(createDecreasingSubsequence(
-    [1,
-3,
-8,
-4,
-10,
-12,
-3,
-2,
-24]
-
-))
-
 function  ListOfNames(array){
-    array = array.sort()
+    array.sort((a , b) => a-b)
+    let newArray = []
     for (let index=0; index < array.length; index++){
-        console.log(`${index+1}.${array[index]}`)
+        newArray.push(`${index+1}.${array[index]}`)
     }
+    return newArray.join('\n')
 }
 
 
-ListOfNames(
-        ["John", "Bob", "Christina", "Ema"]
-)
+console.log(ListOfNames(
+    ["John", "Bob", "Christina", "Ema"]
+))
+
+
+
+function sortingNumbers(array) {
+    let helper = array.clone()
+    array.sort(function (a,b){
+        if(a === Math.max(helper) ){
+
+        }
+    })
+}
+
+
+function sortByTwoCriteria(array){
+    array.sort(function (a , b){
+
+    })
+}
+
+function Equals(matrix){
+
+}
