@@ -36,4 +36,3 @@ class Integer:
             return self.value + integer.value
         else:
             return "number should be an Integer instance"
-

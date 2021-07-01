@@ -12,7 +12,7 @@ class PhotoAlbum:
             if len(self.photos[page]) < 4:
                 self.photos[page].append(label)
                 return f"{label} photo added successfully on page {page + 1} slot {len(self.photos[page])}"
-        return "No more free spots"
+        return "No more free slots"
 
     @staticmethod
     def print_line_of_slashes():
