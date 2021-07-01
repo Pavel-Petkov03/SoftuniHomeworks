@@ -18,7 +18,7 @@ class SteamUser:
             self.games.append(game)
             return f"{self.username} bought {game}"
 
-    def stats(self):
+    def status(self):
         return f"{self.username} has {len(self.games)} games. Total play time: {self.played_hours}"
 
 
