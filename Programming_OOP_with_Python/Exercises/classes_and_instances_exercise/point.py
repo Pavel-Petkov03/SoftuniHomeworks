@@ -21,9 +21,7 @@ class Point:
         cord_x = bigger_x - smaller_x
         return sqrt(cord_x ** 2 + cord_y ** 2)
 
+    def __repr__(self):
+        return f'The point has coordinates ({self.x},{self.y})'
 
-p = Point(2, 4)
-p.set_x(3)
-p.set_y(5)
-print(p.distance(10, 2))
 
