@@ -9,18 +9,18 @@ class EmailValidator:
         self.mails = mails
         self.min_length = min_length
 
-    def __validate_name(self, name):
+    def __is_name_valid(self, name):
         return len(name) >= self.min_length
 
-    def __validate_mail(self, mail):
+    def __is_mail_valid(self, mail):
         return mail in self.mails
 
-    def __validate_domain(self, domain):
+    def __is_domain_valid(self, domain):
         return domain in self.domains
 
     def validate(self, email):
         name, mail, domain = re.split(EmailValidator.REGEX, email)
-        return self.__validate_mail(mail) and self.__validate_domain(domain) and self.__validate_name(name)
+        return self.__is_mail_valid(mail) and self.__is_domain_valid(domain) and self.__is_name_valid(name)
 
 
 mails = ["gmail", "softuni"]
