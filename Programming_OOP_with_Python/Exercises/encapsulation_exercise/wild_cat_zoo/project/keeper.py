@@ -1,9 +1,4 @@
-class Keeper:
-    NAME_OF_KIND = 'Keeper'
-    def __init__(self, name, age, salary):
-        self.age = age
-        self.salary = salary
-        self.name = name
+from project.worker import Worker
 
-    def __repr__(self):
-        return f"Name: {self.name}, Age: {self.age}, Salary: {self.salary}"
+class Keeper(Worker):
+    pass
