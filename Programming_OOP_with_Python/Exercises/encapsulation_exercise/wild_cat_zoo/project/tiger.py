@@ -1,15 +1,7 @@
-class Tiger:
-    NEEDED_MONEY_FOR_Tiger = 45
-    NAME_OF_KIND = 'Tiger'
+from project.animal import Animal
 
-    def __init__(self, name, gender, age):
-        self.name = name
-        self.age = age
-        self.gender = gender
 
-    def __repr__(self):
-        return f"Name: {self.name}, Age: {self.age}, Gender: {self.gender}"
-
+class Tiger(Animal):
     def get_needs(self):
-        return Tiger.NEEDED_MONEY_FOR_Tiger
+        return 45
 
