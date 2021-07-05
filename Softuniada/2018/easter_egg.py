@@ -15,11 +15,6 @@ for i in range(n + 1):
             if el < 2 * n - 2 * i:
                 temp.append('.')
             elif 2 * n - i * 2 <= el < 2 * n - i * 2 + i:
-                """
-                n = 6
-                i = 2
-                2 * 6 - 2*2 = 8 до 10
-                """
                 temp.append('*')
             else:
                 temp.append('+')
