@@ -1,6 +1,3 @@
-
-
-
 class Hotel:
     def __init__(self, name):
         self.name = name
@@ -30,18 +27,20 @@ class Hotel:
             actual_index = find[0]
             self.rooms[actual_index].free_room()
 
-    def print_status(self):
+    def status(self):
         result = ''
         free = ", ".join([str(room.number) for room in self.rooms if not room.is_taken])
         taken = ", ".join([str(room.number) for room in self.rooms if room.is_taken])
-        if self.guests:
-            result += f'Hotel {self.name} has {self.guests} total guests\n'
-        if free:
-            result += f'Free rooms: {free}\n'
-        if taken:
-            result += f'Taken rooms: {taken}'
-        print(result)
+        result += f'Hotel {self.name} has {self.guests} total guests\n'
+        result += f'Free rooms: {free}\n'
+        result += f'Taken rooms: {taken}'
+        return result
 
+    @property
+    def guests(self):
+        return sum([r.guests for r in self.rooms])
 
-
+    @guests.setter
+    def guests(self, value):
+        self.__guests = value
 
