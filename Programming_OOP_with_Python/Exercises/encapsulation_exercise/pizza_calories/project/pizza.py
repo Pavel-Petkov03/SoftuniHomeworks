@@ -1,9 +1,10 @@
+
 class Pizza:
     def __init__(self, name, dough, toppings_capacity):
-        self.__name = name
-        self.__dough = dough
-        self.__toppings_capacity = toppings_capacity
-        self.__toppings = {}
+        self.name = name
+        self.dough = dough
+        self.toppings_capacity = toppings_capacity
+        self.toppings = {}
 
     @property
     def name(self):
@@ -11,6 +12,8 @@ class Pizza:
 
     @name.setter
     def name(self, new_value):
+        if new_value == '':
+            raise ValueError("The name cannot be an empty string")
         self.__name = new_value
 
     @property
@@ -19,6 +22,8 @@ class Pizza:
 
     @dough.setter
     def dough(self, new_value):
+        if new_value is None:
+            raise ValueError("You should add dough to the pizza")
         self.__dough = new_value
 
     @property
@@ -27,6 +32,8 @@ class Pizza:
 
     @toppings_capacity.setter
     def toppings_capacity(self, new_value):
+        if new_value <= 0:
+            raise ValueError("The topping's capacity cannot be less or equal to zero")
         self.__toppings_capacity = new_value
 
     @property
@@ -34,11 +41,11 @@ class Pizza:
         return self.__toppings
 
     @toppings.setter
-    def toppings(self, new_value):
-        self.__toppings = new_value
+    def toppings(self, value):
+        self.__toppings = value
 
     def add_topping(self, topping):
-        if self.__toppings_capacity == len(self.__toppings):
+        if self.toppings_capacity == len(self.__toppings):
             raise ValueError('Not enough space for another topping')
         elif topping.topping_type in self.__toppings:
             self.__toppings[topping.topping_type] += topping.weight
@@ -46,4 +53,4 @@ class Pizza:
             self.__toppings[topping.topping_type] = topping.weight
 
     def calculate_total_weight(self):
-        return sum([weight for type_, weight in self.__toppings.items()]) + self.__dough.weight
+        return sum([weight for type_, weight in self.__toppings.items()]) + self.dough.weight

@@ -1,8 +1,8 @@
-from person.project import Animal
-from person.project import Dog
+from project.person import Person
+from project.employee import Employee
 
 
-class Teacher(Animal, Dog):
+class Teacher(Person, Employee):
     @staticmethod
     def teach():
         return "teaching..."

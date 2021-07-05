@@ -1,14 +1,14 @@
+
 class Player:
-    def __init__(self, name, endurance, sprint, dribble, passing, shooting):
+    def __init__(self, name, sprint, dribble, passing, shooting):
         self.__name = name
-        self.__endurance = endurance
         self.__sprint = sprint
         self.__dribble = dribble
         self.__passing = passing
         self.__shooting = shooting
 
     def __str__(self):
-        return f'Player: {self.__name}\nEndurance: {self.__endurance}\nSprint: {self.__sprint}\nDribble: {self.__dribble}\n' \
+        return f'Player: {self.__name}\nSprint: {self.__sprint}\nDribble: {self.__dribble}\n' \
                f'Passing: {self.__passing}\nShooting: {self.__shooting}\n'
 
     @property
@@ -18,14 +18,6 @@ class Player:
     @name.setter
     def name(self, new):
         self.__name = new
-
-    @property
-    def endurance(self):
-        return self.__endurance
-
-    @endurance.setter
-    def endurance(self, new):
-        self.__endurance = new
 
     @property
     def sprint(self):
@@ -58,4 +50,6 @@ class Player:
     @shooting.setter
     def shooting(self, new):
         self.__shooting = new
+
+
 
