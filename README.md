@@ -8,5 +8,6 @@ My courses in Softuni University
 | --- | --- |
 | Programming Basics with Python | [Link](https://softuni.bg/certificates/details/89260/6eea52b5)  |
 | Programming Fundamentals with Python | [Link](https://softuni.bg/certificates/details/102765/0a38a4a0) |
+| Programming Advanced with Python | [Link](https://softuni.bg/certificates/details/108296/5337c923) |
 
 
