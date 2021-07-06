@@ -46,36 +46,39 @@ function createDecreasingSubsequence(array) {
 }
 
 function ListOfNames(array) {
-    array.sort((a, b) => a - b)
-    let newArray = []
-    for (let index = 0; index < array.length; index++) {
-        newArray.push(`${index + 1}.${array[index]}`)
-    }
-    return newArray.join('\n')
+    return array.sort((a,b) => a.localeCompare(b)).map((el , index) => {
+        return `${index+1}.${el}`
+    }).join('\n')
 }
 
 
-function sortingNumbers(array) {
-    let helper = array.clone()
-    array.sort(function (a, b) {
-        if (a === Math.max(helper)) {
 
-        }
-    })
+
+function sortingNumbers(array) {
+    let newArray = []
+    let len = array.length
+    array.sort((a,b) => a-b)
+    for(let it=0 ; it < len /2; it++){
+        newArray.push(array.shift())
+        newArray.push(array.pop())
+    }
+    return newArray.filter(el => el !== undefined)
 }
 
 
 function sortByTwoCriteria(array) {
     array.sort(function (a, b) {
-
+        return  a- b
     })
 }
+
 
 function magicMatrix(matrix) {
     let newMassive = []
     let helper = []
-    for (let row = 0; row < matrix.length; row++) {
-        for (let col = 0; col < matrix[row].length; col++) {
+    let len = matrix[0].length
+    for (let row = 0; row < len; row++) {
+        for (let col = 0; col < matrix.length; col++) {
             helper.push(matrix[col][row])
         }
         newMassive.push(helper)
@@ -86,13 +89,6 @@ function magicMatrix(matrix) {
     return newMassive.every(array => array.reduce((summer, a) => summer + a, 0) === wantedValues)
 }
 
-console.log(
-    magicMatrix(
-        [[1, 0, 0],
-            [0, 0, 1],
-            [0, 1, 0]]
-    )
-)
 
 
 function ticTacToe(matrix) {
@@ -105,12 +101,13 @@ function ticTacToe(matrix) {
     for (const cord of matrix) {
         row = cord[0]
         col = cord[1]
-        if(matrix[row][col] !== false){
+        if (matrix[row][col] !== false) {
             console.log()
-        }else{
-            let checkForWin = (row , col) => {
+        } else {
+            let checkForWin = (row, col) => {
 
             }
         }
     }
 }
+
