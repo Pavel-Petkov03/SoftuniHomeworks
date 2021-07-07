@@ -65,9 +65,13 @@ function sortingNumbers(array) {
 
 
 function sortByTwoCriteria(array) {
-    array.sort(function (a, b) {
-        return a - b
+    array.sort((current , next) => {
+        if(current.length === next.length){
+            return current.localeCompare(next)
+        }
+        return current.length - next.length
     })
+    array.forEach(el => console.log(el))
 }
 
 
@@ -89,6 +93,38 @@ function magicMatrix(matrix) {
 
 
 function ticTacToe(matrix) {
+    let checkForValidity = (array) => {
+        return array.every(val => val !== false) && array.every(val => val === array[0])
+    }
+    let changePlayer = (player) => {
+        if (player === 'X') {
+            return 'O'
+        }
+        return 'X'
+    }
+    let printResult = (m) => {
+        console.log(`${m[0][0]}\t${m[0][1]}\t${m[0][2]}`)
+        console.log(`${m[1][0]}\t${m[1][1]}\t${m[1][2]}`)
+        console.log(`${m[2][0]}\t${m[2][1]}\t${m[2][2]}`)
+    }
+    let checkForWin = (matrix) => {
+        let horizontal = []
+        let vertical = []
+        let firstDiagonal = [matrix[0][0], matrix[1][1], matrix[2][2]]
+        let secondDiagonal = [matrix[2][0], matrix[1][1], matrix[0][2]]
+        for (let row = 0; row <= 2; row++) {
+            for (let col = 0; col <= 2; col++) {
+                horizontal.push(matrix[row][col])
+                vertical.push(matrix[col][row])
+            }
+            if (checkForValidity(horizontal) || checkForValidity(vertical)) {
+                return true
+            }
+            horizontal = []
+            vertical = []
+        }
+        return checkForValidity(firstDiagonal) || checkForValidity(secondDiagonal)
+    }
     let initialMatrix = [[false, false, false],
         [false, false, false],
         [false, false, false]]
@@ -98,12 +134,6 @@ function ticTacToe(matrix) {
     let row
     let col
     let startPlayer = 'O'
-    let changePlayer = (player) => {
-        if (player === 'X') {
-            return 'O'
-        }
-        return 'X'
-    }
     while (!isWinner && takenPlaces !== 9) {
         [row, col] = [...matrix[startTupleOfCord].split(' ').map(x => Number(x))]
         startTupleOfCord++
@@ -112,57 +142,112 @@ function ticTacToe(matrix) {
             initialMatrix[row][col] = startPlayer
             takenPlaces++
             isWinner = checkForWin(initialMatrix)
-        }else{
+        } else {
             console.log(`This place is already taken. Please choose another!`)
         }
     }
 
-    let printResult  = () => {
-        console.log(`${initialMatrix[0][0]}\t${initialMatrix[0][1]}\t${initialMatrix[0][2]}`)
-        console.log(`${initialMatrix[1][0]}\t${initialMatrix[1][1]}\t${initialMatrix[1][2]}`)
-        console.log(`${initialMatrix[2][0]}\t${initialMatrix[2][1]}\t${initialMatrix[2][2]}`)
-    }
-    if(isWinner){
+
+    if (isWinner) {
         console.log(`Player ${startPlayer} wins!`)
-    }else{
+    } else {
         console.log(`The game ended! Nobody wins :(`)
     }
-    printResult()
+    printResult(initialMatrix)
 }
 
-
-function checkForWin(matrix) {
-    if (matrix[0][0] === matrix[0][1] === matrix[0][2] !== false) {
-        return true
-    } else if (matrix[1][0] === matrix[1][1] === matrix[1][2] !== false) {
-        return true
-    } else if (matrix[2][0] === matrix[2][1] === matrix[2][2] !== false) {
-        return true
-    } else if (matrix[0][0] === matrix[1][1] === matrix[2][2] !== false) {
-        return true
-    } else if (matrix[2][0] === matrix[1][1] === matrix[0][2] !== false) {
-        return true
-    } else if (matrix[0][0] === matrix[0][1] === matrix[0][2] !== false) {
-        return true
-    } else if (matrix[1][0] === matrix[1][1] === matrix[1][2] !== false) {
-        return true
-    } else if (matrix[2][0] === matrix[2][1] === matrix[2][2] !== false) {
-        return true
+function diagonalAttack(matrix) {
+    matrix = matrix.map(array => array.split(' ').map(el => parseInt(el)))
+    let firstDiagonalSum = 0
+    let col = 0
+    let secondDiagonal = 0
+    let unwantedCord = []
+    let makeChange = (m, changeValue, cord) => {
+        for (let row = 0; row < m.length; row++) {
+            for (let col = 0; col < m.length; col++) {
+                if (!cord.some(ar => ar[0] === row && ar[1] === col)) {
+                    m[row][col] = changeValue
+                }
+            }
+        }
+        return m
     }
-    return false
+    let printMatrix = (m) => {
+        m.forEach(array => console.log(array.join(' ')))
+    }
+
+    for (let s = 0; s < matrix.length; s++) {
+        firstDiagonalSum += matrix[s][s]
+        unwantedCord.push([s, s])
+    }
+    for (let row = matrix.length - 1; row >= 0; row--) {
+        secondDiagonal += matrix[row][col]
+        unwantedCord.push([row, col])
+        col++
+    }
+    if (firstDiagonalSum === secondDiagonal) {
+        matrix = makeChange(matrix, firstDiagonalSum, unwantedCord)
+    }
+    printMatrix(matrix)
 }
 
 
-ticTacToe(
-        ["0 1",
-             "0 0",
-             "0 2",
-             "2 0",
-             "1 0",
-             "1 1",
-             "1 2",
-             "2 2",
-             "2 1",
-             "0 0"]
-)
+function orbit(array) {
+    [width, height, rowPos, colPos] = [...array.map(el => parseInt(el))]
+    let matrix = []
+    let printMatrix = (m) => {
+        m.forEach(array => console.log(array.join(' ')))
+    }
+    for (let row = 0; row < height; row++) {
+        matrix.push([])
+        for (let col = 0; col < width; col++) {
+            if (rowPos !== row || colPos !== col) {
+                matrix[row][col] = Math.max(Math.abs(rowPos - row), Math.abs(colPos - col)) + 1
+            }
 
+        }
+
+    }
+    matrix[rowPos][colPos] = 1
+    printMatrix(matrix)
+}
+
+
+
+function spiralMatrix(r , c) {
+    const results = [];
+    for (let i = 0; i < r; i++) {
+        results.push([]);
+    }
+    let counter = 1;
+    let startColumn = 0;
+    let endColumn = c - 1;
+    let startRow = 0;
+    let endRow = r - 1;
+    let printMatrix = (m) => {
+        m.forEach(array => console.log(array.join(' ')))
+    }
+    while (startColumn <= endColumn && startRow <= endRow) {
+        for (let i = startColumn; i <= endColumn; i++) {
+            results[startRow][i] = counter;
+            counter++;
+        }
+        startRow++;
+        for (let i = startRow; i <= endRow; i++) {
+            results[i][endColumn] = counter;
+            counter++;
+        }
+        endColumn--;
+        for (let i = endColumn; i >= startColumn; i--) {
+            results[endRow][i] = counter;
+            counter++;
+        }
+        endRow--;
+        for (let i = endRow; i >= startRow; i--) {
+            results[i][startColumn] = counter;
+            counter++;
+        }
+        startColumn++;
+    }
+    printMatrix(results)
+}
