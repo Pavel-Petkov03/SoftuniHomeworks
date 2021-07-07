@@ -91,3 +91,22 @@ createAssemblyLine = () => {
         }
     }
 }
+
+function  serializeData(json){
+    let objectArray =  JSON.parse(json)
+    let matrix = [Object.keys(objectArray[0])]
+    objectArray.forEach(array => matrix.push(Object.values(array)))
+    const closeTag= (tag) => {
+        tag = tag.split('')
+        return [tag[0] ,'/', ...tag.slice(1)].join('')
+    }
+    matrix[0].forEach(el => `<th>${el}${closeTag('<th>')}`)
+
+    return matrix
+}
+
+console.log(
+    serializeData(
+        '[{"Name":"Stamat", "Score":5.5}, {"Name":"Rumen", "Score":6}]'
+    )
+)
