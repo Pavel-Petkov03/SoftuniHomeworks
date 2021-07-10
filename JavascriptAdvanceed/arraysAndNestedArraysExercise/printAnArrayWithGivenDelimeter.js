@@ -193,7 +193,7 @@ function diagonalAttack(matrix) {
 
 
 function orbit(array) {
-    [width, height, rowPos, colPos] = [...array.map(el => parseInt(el))]
+    let [width, height, rowPos, colPos] = [array.map(el => parseInt(el))]
     let matrix = []
     let printMatrix = (m) => {
         m.forEach(array => console.log(array.join(' ')))

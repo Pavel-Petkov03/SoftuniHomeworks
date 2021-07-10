@@ -1,4 +1,4 @@
-let cityRecords = (name , population , treasury) => {
+let cityRecords = (name, population, treasury) => {
     return {
         name, population, treasury
     }
@@ -6,29 +6,29 @@ let cityRecords = (name , population , treasury) => {
 
 let townPopulation = (array) => {
     let obj = {}
-    for (let index =0; index < array.length; index++){
-        let [key , value] = [...array[index].split(' <-> ')]
-        if(!(key in obj)){
+    for (let index = 0; index < array.length; index++) {
+        let [key, value] = [...array[index].split(' <-> ')]
+        if (!(key in obj)) {
             obj[key] = 0
         }
         obj[key] += parseInt(value)
     }
     for (const objKey in obj) {
-         console.log(`${objKey} : ${obj[objKey]}`)
+        console.log(`${objKey} : ${obj[objKey]}`)
     }
 }
 
-let cityTaxes = (name , population , treasury) => {
-    return  {
+let cityTaxes = (name, population, treasury) => {
+    return {
         name,
         population,
         treasury,
-        taxRate : 10,
-        collectTaxes () {
-            this.treasury +=   this.population * this.taxRate
+        taxRate: 10,
+        collectTaxes() {
+            this.treasury += this.population * this.taxRate
         },
         applyGrowth(percentage) {
-            this.population += Math.floor(this.population * percentage/ 100)
+            this.population += Math.floor(this.population * percentage / 100)
         },
         applyRecession(percentage) {
             this.treasury -= Math.ceil(this.treasury * percentage / 100)
@@ -38,15 +38,14 @@ let cityTaxes = (name , population , treasury) => {
 }
 
 
-
 const factory = (library, orders) => {
     let result = []
     for (const obj of orders) {
         let comp = Object.assign({}, obj.template)
-        for (const parts of obj.parts){
+        for (const parts of obj.parts) {
             comp[parts] = library[parts]
         }
-    result.push(comp)
+        result.push(comp)
     }
     return result
 }
@@ -92,19 +91,27 @@ createAssemblyLine = () => {
     }
 }
 
-function  serializeData(json){
-    let objectArray =  JSON.parse(json)
+function serializeData(json) {
+    let objectArray = JSON.parse(json)
     let matrix = [Object.keys(objectArray[0])]
     objectArray.forEach(array => matrix.push(Object.values(array)))
-    const closeTag= (tag) => {
+    const closeTag = (tag) => {
         tag = tag.split('')
-        return [tag[0] ,'/', ...tag.slice(1)].join('')
+        return [tag[0], '/', ...tag.slice(1)].join('')
     }
-    matrix[0].forEach(el => `<th>${el}${closeTag('<th>')}`)
+    matrix[0] = '<tr>' + matrix[0].map(el => `<th>${el}${closeTag('<th>')}`).join('') + '</tr>'
+    for (let index = 1; index < matrix.length; index++) {
+        matrix[index] = '<tr>' + matrix[index].map(el => `<td>${el}${closeTag('<td>')}`).join('') + '</tr>'
+    }
+    matrix.forEach((el, index) => matrix[index]=`   ${el}`)
+    matrix.unshift('<table>')
+    matrix.push('</table>')
+    return matrix.join('\n')
 
-    return matrix
 }
 
+// TODO
+// make corrections on json exercise [make clear logic not hardcoded]
 console.log(
     serializeData(
         '[{"Name":"Stamat", "Score":5.5}, {"Name":"Rumen", "Score":6}]'
