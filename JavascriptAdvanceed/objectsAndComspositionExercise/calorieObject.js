@@ -102,7 +102,6 @@ storageCatalogue = (array) => {
             console.log(`  ${array.shift()}`)
         }
     }
-
 }
 
 
@@ -142,29 +141,43 @@ createSortedList = () => {
         return array.sort((a,b) => a-b)
     }
      let obj = {
-        array: [],
         add(element){
-            array  = sortArray(this.array)
             array.push(element)
+            array  = sortArray(array)
         },
         remove(index){
-            array = sortArray(this.array)
-            // Todo [make new ]
+            if(index  >= 0 &&  index < array.length){
+                array = array.slice(0, index) + array.slice(index+1)
+                array = sortArray(array)
+            }
+
+            // Todo [make new array with popped index]
         },
         get(index){
-            array = sortArray(this.array)
-            return array[index]
+            if(index >=0 && index < array.length){
+                return array[index]
+            }
+
         },
         size: array.length
     }
     return obj
 }
 
-let list = createSortedList();
-list.add(5);
-list.add(6);
-list.add(7);
-console.log(list.get(1));
-list.remove(1);
-console.log(list.get(1));
+solve = () => {
+    return {
+        fighter(name){
+            let obj = {
+                name,
+                health : 100,
+                stamina : 100
+            }
+
+        },
+        mage(){
+
+        }
+    }
+}
+
 
