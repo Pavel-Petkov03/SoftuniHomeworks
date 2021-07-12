@@ -1,7 +1,7 @@
 calorieObject = (array) => {
     let obj = {}
     for (let index = 0; index < array.length; index += 2) {
-        obj[array[index]] = array[index + 1]
+        obj[array[index]] = parseInt(array[index + 1])
     }
     return obj
 }
@@ -58,14 +58,11 @@ heroicInventory = (array) => {
     for (let index = 0; index < array.length; index++) {
         let [name, level, items] = array[index].split(' / ')
         level = Number(level)
-        let obj = {
-            name: name,
-            level: level,
-            items: items === items ? items.split(', ') : []
-        }
-        final.push(JSON.stringify(obj))
+        items = items ? items.split(', ') : []
+
+        final.push({name, level, items})
     }
-    return final
+    console.log(JSON.stringify(final))
 }
 
 lowestPricesInCities = (array) => {
@@ -99,35 +96,22 @@ storageCatalogue = (array) => {
             console.log(String.fromCharCode(letter))
         }
         for (const el of newArray) {
-            console.log(`  ${array.shift()}`)
+            let [first, second] = array.shift().split(' : ')
+            console.log(` ${first}: ${second}`)
         }
     }
 }
 
 
 townToJson = (array) => {
-    let result = []
-    array.forEach((str, index, array) => array[index] = str.split(' ').join('').split('|').slice(1, -1))
-    for (let index = 1; index < array.length; index++) {
-        let [Town, longitude, latitude] = array[index]
-        let Longitude = Number(Number(longitude).toFixed(2))
-        let Latitude = Number(Number(latitude).toFixed(2))
-        result.push(
-            {
-                Town,
-                Longitude,
-                Latitude
-            }
-        )
-    }
-    return JSON.stringify(result)
+
 }
 rectangle = (width, height, color) => {
     return {
         width,
         height,
         color: color[0].toUpperCase() + color.slice(1),
-        calcArea(){
+        calcArea() {
             return width * height
         }
     }
@@ -138,46 +122,95 @@ createSortedList = () => {
 
     let array = []
     let sortArray = (array) => {
-        return array.sort((a,b) => a-b)
+        return array.sort((a, b) => a - b)
     }
-     let obj = {
-        add(element){
-            array.push(element)
-            array  = sortArray(array)
-        },
-        remove(index){
-            if(index  >= 0 &&  index < array.length){
-                array = array.slice(0, index) + array.slice(index+1)
-                array = sortArray(array)
-            }
 
-            // Todo [make new array with popped index]
-        },
-        get(index){
-            if(index >=0 && index < array.length){
-                return array[index]
-            }
-
-        },
-        size: array.length
+    function add(element) {
+        array.push(element)
+        array = sortArray(array)
+        this.size++
     }
-    return obj
+
+    function remove(index) {
+        if (index >= 0 && index < array.length) {
+            array.splice(index, 1)
+            this.size--
+        }
+
+    }
+
+    function get(index) {
+        if (index >= 0 && index < array.length) {
+            return array[index]
+        }
+
+    }
+
+    return {size: 0, add, remove, get}
 }
 
 solve = () => {
     return {
-        fighter(name){
-            let obj = {
+        fighter(name) {
+            return {
                 name,
-                health : 100,
-                stamina : 100
+                health: 100,
+                stamina: 100,
+                fight() {
+                    this.stamina--
+                    console.log(`${this.name} slashes at the foe!`)
+                }
             }
 
         },
-        mage(){
+        mage(name) {
+            return {
+                name,
+                health: 100,
+                mana: 100,
+                cast(spell) {
+                    this.mana--
+                    console.log(`${this.name} cast ${spell}`)
+                }
 
+            }
         }
     }
 }
 
 
+jansNotation = (array) => {
+    let operands = ['/', '*', '+', '-']
+    let numArray = []
+    for (const argument of array) {
+        if (operands.includes(argument)) {
+            if (numArray.length >= 2) {
+                let [second, first] = [numArray.pop(), numArray.pop()]
+                numArray.push(eval(`${first}
+                ${argument}
+                ${second} `))
+            } else {
+                return `Error: not enough operands!`
+            }
+        } else {
+            numArray.push(argument)
+        }
+    }
+    if (numArray.length === 1) {
+        return numArray[0]
+    } else {
+        return `Error: too many operands!`
+    }
+}
+
+
+console.log(
+    townToJson(
+        ['| Town | Latitude | Longitude |',
+            '| Veliko Turnovo | 43.0757 | 25.6172 |',
+            '| Monatevideo | 34.50 | 56.11 |']
+    )
+)
+
+
+// TODO complete townToJSON exercise
