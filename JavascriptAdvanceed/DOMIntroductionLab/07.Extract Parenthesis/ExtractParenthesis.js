@@ -1,8 +1,7 @@
 function extract(content) {
     let result = []
-    const text  = document.getElementById('content')
+    const text  = document.getElementById(content).textContent
     let rego = /\((.+?)\)/gm
-    console.log(content.match(rego))
     let m = rego.exec(text)
     while(m !== null){
         result.push(m[1])
