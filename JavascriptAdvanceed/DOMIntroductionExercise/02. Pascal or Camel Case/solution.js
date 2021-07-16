@@ -24,5 +24,5 @@ function solve() {
             words = ['Error!']
     }
     let result = document.getElementById('result')
-    result.textContent = words.join(' ')
+    result.textContent = words.join('')
 }

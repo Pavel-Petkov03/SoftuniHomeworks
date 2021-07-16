@@ -1,9 +1,13 @@
 function solve() {
     let selectMenu = document.getElementById('selectMenuTo')
-    let binaryOption = new Option('Binary', 'binary')
-    let hexadecimalOption = new Option('Hexadecimal', 'hexadecimal')
+    let binaryOption = document.createElement('option')
+    let hexadecimalOption = document.createElement('option')
+    binaryOption.appendChild(document.createTextNode('Binary'))
+    hexadecimalOption.appendChild(document.createTextNode('Hexadecimal'))
     selectMenu.appendChild(binaryOption)
     selectMenu.appendChild(hexadecimalOption)
+    binaryOption.value = 'binary'
+    hexadecimalOption.value = 'hexadecimal'
     const myButton = document.getElementsByTagName('button')[0]
     const result = document.getElementById('result')
 
