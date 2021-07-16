@@ -2,75 +2,35 @@ function solve() {
     document.querySelector('#btnSend').addEventListener('click', onClick);
 
     function onClick() {
-        let result = []
-        let allData = JSON.parse(document.getElementsByTagName('textarea')[0].value)
-        for (const data of allData) {
-            let [restaurantName, workers] = data.split(' - ')
-            workers = workers.split(', ')
-            let listOfWorkers = workers.reduce((acc, cur) => {
-                let [workerName, workerSalary] = cur.split(' ')
-                workerSalary = Number(workerSalary)
-                acc.push({workerName, workerSalary})
-                return acc
-            }, [])
-            if (checkForSameRestaurant(result, restaurantName)) {
-                let initialObj = returnObject(result, restaurantName)
-                listOfWorkers.forEach( el => initialObj.listOfWorkers.push(el))
-                initialObj.maxPayment = getMaxPayment(initialObj.listOfWorkers)
-                initialObj.averageSalary = getAverageSalary(initialObj.listOfWorkers)
-            } else {
-                let obj = {listOfWorkers,
-                    restaurantName,
-                    maxPayment : getMaxPayment(listOfWorkers).toFixed(2),
-                    averageSalary : getAverageSalary(listOfWorkers).toFixed(2)
+        let result = {}
+        const allData = JSON.parse(document.querySelectorAll('#inputs textarea')[0].value)
+        allData.forEach(el => {
+            let [name, workersWithSalaryString] = el.split(' - ')
+            let listOfWorkersAsObjects = workersWithSalaryString.split(', ').reduce((ac, cur) => {
+                let [name , salary] = cur.split(' ')
+                salary = Number(salary)
+                ac.push({name, salary})
+                return ac
+            },[])
+            if(result[name]){
+                listOfWorkersAsObjects = result[name].listOfWorkersAsObjects.concat(listOfWorkersAsObjects)
+            }
+            listOfWorkersAsObjects.sort((worker1, worker2) => worker2.salary- worker1.salary)
+            const maxSalary = listOfWorkersAsObjects[0].salary
+            const averageSalary = listOfWorkersAsObjects.reduce((ac , cur) => ac + cur.salary, 0) / listOfWorkersAsObjects.length
+            result[name] = {listOfWorkersAsObjects, maxSalary, averageSalary}
+        })
+        let max = 0
+        let bestRestaurant
+        for (const name in result) {
+            if(result[name].maxSalary > max){
+                max = result[name].maxSalary
+                bestRestaurant = {
+                    name, ...result[name]
                 }
-                result.push(obj)
             }
         }
-        let finalObject = findRestaurantWithMaxAverageSalary(result)
-        finalObject.listOfWorkers.sort((cur, next) => cur.salary - next.salary)
-        document.querySelectorAll('#bestRestaurant p')[0].textContent = `Name: ${finalObject.restaurantName} Average Salary: ${finalObject.averageSalary} Best Salary: ${finalObject.maxPayment}`
-        document.querySelectorAll('#workers p')[0].textContent = finalObject.listOfWorkers.reduce((ac , cur) => {
-            ac.push(`Name: ${cur.workerName} With Salary: ${cur.workerSalary}`)
-            return ac
-        }, []).join(' ')
-    }
-
-
-    function findRestaurantWithMaxAverageSalary(listOfObjects){
-        let max = 0
-        let cur
-        for (const listOfObject of listOfObjects) {
-            if(listOfObject.averageSalary > max){
-                cur = listOfObject
-                max = listOfObject.averageSalary
-            }
-        }
-        return cur
-    }
-
-    function getMaxPayment(massive) {
-        let max = 0
-        for (const obj of massive) {
-            if (obj.workerSalary > max) {
-                max = obj.workerSalary
-            }
-        }
-        return max
-
-    function returnObject(ls, nameOfRestaurant) {
-        return ls.filter(obj => obj.restaurantName === nameOfRestaurant)[0]
-    }
-    }
-
-    function getAverageSalary(massive) {
-        return massive.reduce((acc, cur) => {
-            return acc + cur.workerSalary
-        }, 0) / massive.length
-
-    }
-
-    function checkForSameRestaurant(ls, nameOfRestaurant) {
-        return ls.filter(el => el.restaurantName === nameOfRestaurant).length === 1
+        document.querySelector('#bestRestaurant p').textContent = `Name: ${bestRestaurant.name} Average Salary: ${bestRestaurant.averageSalary.toFixed(2)} Best Salary: ${bestRestaurant.maxSalary.toFixed(2)}`
+        document.querySelector('#workers p').textContent = bestRestaurant.listOfWorkersAsObjects.map(el => `Name: ${el.name} With Salary: ${el.salary}`).join(' ')
     }
 }

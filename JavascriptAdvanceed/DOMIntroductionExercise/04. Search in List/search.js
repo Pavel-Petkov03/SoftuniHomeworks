@@ -13,5 +13,6 @@ function search() {
          counter++
       }
    }
+   document.getElementById('result').textContent = `${counter} matches found`
 }
 
