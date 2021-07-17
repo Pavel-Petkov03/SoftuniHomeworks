@@ -1,3 +1,5 @@
 function attachGradientEvents() {
-    console.log('TODO:...');
+    document.getElementById('gradient').addEventListener('mouseover' ,(event) => {
+        console.log(event)
+    })
 }
