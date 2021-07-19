@@ -7,9 +7,9 @@ def even_parameters(function):
     def wrapper(*args):
         try:
             f = function(*args)
-            if f % 2 != 0:
+            if len([el for el in args if el % 2 == 0]) != len(args):
                 return "Please use only even numbers!"
-            return f(*args)
+            return f
         except TypeError:
             return "Please use only even numbers!"
 
@@ -17,8 +17,8 @@ def even_parameters(function):
 
 
 @even_parameters
-def emp():
-    return 'hi'
+def add(a, b):
+    return a + b
 
 
-print(emp)
+print(add(4, 2))
