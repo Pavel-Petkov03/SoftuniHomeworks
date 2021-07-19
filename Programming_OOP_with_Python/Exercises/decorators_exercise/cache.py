@@ -16,6 +16,4 @@ def fibonacci(n):
 
 fibonacci(3)
 print(fibonacci.log)
-fibonacci(100)
-print(fibonacci.log)
 

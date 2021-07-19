@@ -10,7 +10,7 @@ class Group:
         return f'Group {self.name} with members {", ".join([f"{p.name} {p.surname}" for p in self.people])}'
 
     def __add__(self, other):
-        return Group('Todo', self.people + other.people)
+        return Group(f"{self.name} {other.name}", self.people + other.people)
 
     def __getitem__(self, item):
         return f'Person {item}: {self.people[item]}'
@@ -20,7 +20,6 @@ class Person:
     def __init__(self, name, surname):
         self.name = name
         self.surname = surname
-        self._index = 0
 
     def __add__(self, other):
         return Person(self.name, other.surname)
