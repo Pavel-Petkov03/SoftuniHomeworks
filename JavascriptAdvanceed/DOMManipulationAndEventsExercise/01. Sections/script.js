@@ -5,6 +5,7 @@ function create(words) {
       const div = document.createElement('div')
       const p = document.createElement('p')
       p.textContent = w
+      p.style.display = 'none'
       div.appendChild(p)
       div.addEventListener('click', (ev) => {
          if(ev.target.children[0].style.display ===  'block'){
