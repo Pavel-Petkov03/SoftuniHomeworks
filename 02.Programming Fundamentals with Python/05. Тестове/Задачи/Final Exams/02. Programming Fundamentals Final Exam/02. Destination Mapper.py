@@ -17,10 +17,13 @@
 # •	Print the messages described above
 
 import re
+
 pattern = r'([=/])([A-Z][A-Za-z][A-Za-z]+)\1'
 list_ = []
 for c in re.finditer(pattern, input()):
-	list_.append(c.group()[1:-1])
+    list_.append(c.group()[1:-1])
+
 
 print(f'Destinations: {", ".join(list_)}')
 print(f'Travel Points: {sum([len(c) for c in list_])}')
+

@@ -4,3 +4,4 @@ function subtract() {
     const result = document.getElementById('result')
     result.textContent = String(firstNumber - secondNumber)
 }
+
