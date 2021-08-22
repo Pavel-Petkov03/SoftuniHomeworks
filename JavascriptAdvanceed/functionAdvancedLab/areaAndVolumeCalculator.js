@@ -149,27 +149,3 @@ function listProcessor(array) {
 // seventh
 
 
-function cars(array) {
-    let objects = {}
-    let finalObjects = {}
-    array.forEach(command => {
-        let splitCommand = command.split(' ')
-        let initialName = splitCommand[1]
-        if (splitCommand.length === 2 && splitCommand[0] === 'create') {
-            objects[initialName] = {listOfChildren: []}
-        } else if (splitCommand.length === 4 && splitCommand[2] === 'inherit') {
-            objects[initialName] = {listOfChildren: []}
-            objects[splitCommand[3]].listOfChildren.push(initialName)
-        } else if (splitCommand.length === 4) {
-            let [_, name, key, value] = splitCommand
-            objects[name][key] = value
-            objects[name].listOfChildren.forEach(el => {
-
-            })
-        } else {
-            console.log(objects[initialName])
-        }
-    })
-}
-
-
