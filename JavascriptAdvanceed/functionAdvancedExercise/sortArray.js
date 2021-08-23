@@ -59,31 +59,117 @@ function getFibonator() {
 
 function breakfastRobot(array) {
     let holderForNeeds = {
-        protein : 0,
-        carbohydrate : 0,
-        fat : 0,
-        flavour : 0
+        protein: 0,
+        carbohydrate: 0,
+        fat: 0,
+        flavour: 0
     }
-    let holderForProducts = {
-        apple : {carbohydrate : 1, flavour : 2},
-        lemonade  : {carbohydrate : 10, flavour : 20},
-        burger  : {carbohydrate : 5, flavour : 3, fat : 7},
-        eggs : {flavour : 1, fat : 1, protein: 5},
-        turkey : {carbohydrate : 10, flavour : 10, fat : 10 , protein : 10},
+    const holderForProducts = {
+        apple: {carbohydrate: 1, flavour: 2},
+        lemonade: {carbohydrate: 10, flavour: 20},
+        burger: {carbohydrate: 5, flavour: 3, fat: 7},
+        eggs: {flavour: 1, fat: 1, protein: 5},
+        turkey: {carbohydrate: 10, flavour: 10, fat: 10, protein: 10},
     }
-    array.forEach(el => {
-        el = el.split(' ')
-        if (el[0] === 'report') {
 
-        } else if (el[0] === 'restock') {
-            holderForNeeds[el[1]] += el[2]
-        }else{
-
+    function main(str) {
+        str = str.split(' ')
+        if (str[0] === 'report') {
+            return `protein=${holderForNeeds.protein} carbohydrate=${holderForNeeds.carbohydrate} fat=${holderForNeeds.fat} flavour=${holderForNeeds.flavour}`
+        } else if (str[0] === 'restock') {
+            let [_, type, c] = str
+            holderForNeeds[type] += Number(c)
+            return 'Success'
+        } else {
+            let [_, type, c] = str
+            c = Number(c)
+            return makeOrder(type, c)
         }
-    })
 
 
-    function makeOrder(meal){
-
+        function makeOrder(meal, count) {
+            let neededIngredients = Object.entries(holderForProducts[meal])
+            for (let _ = 0; _ < count; _++) {
+                for (const neededIngredient of neededIngredients) {
+                    let [type, count] = neededIngredient
+                    if (count > holderForNeeds[type]) {
+                        return `Error: not enough ${type} in stock`
+                    }
+                    holderForNeeds[type] -= count
+                }
+            }
+            return 'Success'
+        }
     }
+
+    return main
 }
+
+
+// see in the lecture
+
+
+function add(result) {
+
+    function main(num) {
+        result += num
+        return main
+    }
+
+    main.toString = () => result
+    return main
+}
+
+
+function solution(task) {
+    let rating = ''
+    let allVotes = this.upvotes + this.downvotes
+    let balance = this.upvotes - this.downvotes
+    switch (task) {
+        case 'upvote' :
+            this.upvotes++;
+            break
+        case 'downvote' :
+            this.downvotes++;
+            break
+        case 'score' :
+            if(allVotes < 10){
+                 rating = 'new'
+            }
+            else if (this.upvotes > allVotes * 0.66) {
+                rating = 'hot'
+            } else if (this.upvotes > 100 && this.downvotes > 100 && balance >= 0) {
+                rating = 'controversial'
+            } else if (balance < 0) {
+                rating = 'unpopular'
+            } else {
+                rating = 'new'
+            }
+            let final = [this.upvotes, this.downvotes, balance, rating]
+            if (allVotes > 50) {
+                let value = Math.ceil(Math.max(this.upvotes , this.downvotes)* 0.25)
+                final[0] += value
+                final[1] += value
+            }
+            return final
+    }
+
+}
+
+
+
+
+
+let post = {
+    id: '3',
+    author: 'emil',
+    content: 'wazaaaaa',
+    upvotes: 0,
+    downvotes: 0
+};
+
+solution.call(post , 'upvote')
+let a = solution.call(post , 'score')
+console.log(
+    a
+)
