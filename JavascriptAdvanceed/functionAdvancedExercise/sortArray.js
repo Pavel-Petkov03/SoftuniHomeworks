@@ -138,7 +138,7 @@ function solution(task) {
             }
             else if (this.upvotes > allVotes * 0.66) {
                 rating = 'hot'
-            } else if (this.upvotes > 100 && this.downvotes > 100 && balance >= 0) {
+            } else if (allVotes > 100 && balance >= 0) {
                 rating = 'controversial'
             } else if (balance < 0) {
                 rating = 'unpopular'
@@ -159,17 +159,3 @@ function solution(task) {
 
 
 
-
-let post = {
-    id: '3',
-    author: 'emil',
-    content: 'wazaaaaa',
-    upvotes: 0,
-    downvotes: 0
-};
-
-solution.call(post , 'upvote')
-let a = solution.call(post , 'score')
-console.log(
-    a
-)
