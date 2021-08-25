@@ -117,6 +117,7 @@ function add(result) {
     }
 
     main.toString = () => result
+
     return main
 }
 
