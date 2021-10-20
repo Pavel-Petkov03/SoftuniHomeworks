@@ -1,0 +1,7 @@
+{
+  "name": "javascriptadvanced",
+  "version": "1.0.0",
+  "dependencies": {
+    "mocha": "^9.1.2"
+  }
+}

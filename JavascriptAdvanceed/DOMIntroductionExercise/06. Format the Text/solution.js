@@ -4,15 +4,18 @@ function solve() {
     while (wholeTextMassive.length > 0) {
         if (wholeTextMassive.length >= 3) {
             let text = [wholeTextMassive.shift(), wholeTextMassive.shift(), wholeTextMassive.shift()].join('.')
-            result.innerHTML += `<p> ${text}</p>`
+            const p = document.createElement("p")
+            p.textContent = text
+            result.append(p)
         } else {
             let text = '';
             let len = wholeTextMassive.length
             for (let i = 0; i < len; i++ ){
                 text += wholeTextMassive.shift()
             }
-            result.innerHTML += `<p> ${text}.</p>`
+            const p = document.createElement("p")
+            p.textContent = text
+            result.append(p)
         }
     }
-
 }
