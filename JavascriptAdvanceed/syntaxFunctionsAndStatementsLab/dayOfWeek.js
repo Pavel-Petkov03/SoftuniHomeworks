@@ -27,3 +27,4 @@ function week(text) {
     }
     console.log(result)
 }
+console.log(12)
