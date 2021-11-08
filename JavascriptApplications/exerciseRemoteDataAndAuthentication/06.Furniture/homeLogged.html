@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="static/style.css">
+    <title>FURNITURE</title>
+</head>
+
+<body>
+    <header>
+        <h1>Furniture List</h1>
+        <nav>
+            <a class="active">Catalog</a>
+            <div id="user">
+                <a id="logoutBtn" href="javascript:void(0)" class="authorized">Logout</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="container">
+            <div id="exercise">
+                <div class="wrapper">
+                    <div class="card-wrapper">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="authorized">Create Product</h2>
+                                <form action="" method="post" class="authorized">
+                                    <label>Name: <input type="text" name="name"></label>
+                                    <label>Price: <input type="text" name="price"></label>
+                                    <label>Factor: <input type="text" name="factor"></label>
+                                    <label>Img: <input type="text" name="img"></label>
+                                    <button>Create</button>
+                                </form>
+                                <hr class="authorized">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Decoration factor</th>
+                                            <th>Mark</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                                <button>Buy</button>
+                                <hr>
+                                <div class="authorized orders" >
+                                    <p>Bought furniture: <span>Office chair, Sofa</span></p>
+                                    <p>Total price: <span>419 $</span></p>
+                                    <button>All orders</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
