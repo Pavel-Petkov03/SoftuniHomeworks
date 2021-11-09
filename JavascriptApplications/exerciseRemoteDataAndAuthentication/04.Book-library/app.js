@@ -1,4 +1,4 @@
-
+import {e , generateRequest} from "../utils"
 const saveBtn = e("button" , {textContent : "Save"})
 const submitBtn = document.getElementById("submit")
 let title = document.getElementById("title")
@@ -22,18 +22,6 @@ function emptyFields(){
     title.value = ""
     author.value = ""
 }
-
-function e(type , attributes , children){
-    let result = document.createElement(type)
-    Object.entries(attributes).forEach(([prop , val]) => {
-        result[prop] = val
-    })
-    if(children){
-        children.forEach(el => result.appendChild(el))
-    }
-    return result
-}
-
 
 function buildTr(authorText , titleText, id){
     let deleteBtn = e("button" , {textContent : "Delete"})
@@ -89,15 +77,3 @@ document.getElementById("loadBooks").addEventListener("click" , async () => {
         throw new Error("Error has occurred")
     }
 })
-
-async function generateRequest(endpoint , method , body){
-    let init = {
-        method : method,
-        headers : {"content-type" : "application/json"},
-    }
-    if (body){
-        init.body = JSON.stringify(body)
-    }
-    let res = await fetch(endpoint, init)
-    return await res.json()
-}

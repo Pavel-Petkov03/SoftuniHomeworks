@@ -1,47 +1,32 @@
-document.getElementById("submit").addEventListener("click" , (ev) => {
+import {e, generateRequest, retrieveData} from "../utils"
+
+
+document.getElementById("submit").addEventListener("click" , async (ev) => {
     ev.preventDefault()
-    let data = new FormData(document.querySelector("form"))
-    let {firstName , lastName , facultyNumber , grade} = [...data.entries()].reduce((acc , cur) => {
-        let [prop , val] = cur
-        acc[prop] = val
-        return acc
-    }, {})
+    let {firstName , lastName , facultyNumber , grade} = retrieveData(document.querySelector("form"))
     if (validate([firstName , lastName , facultyNumber , grade])){
-        post({firstName , lastName , facultyNumber , grade})
+        await post({firstName , lastName , facultyNumber , grade})
     }
 })
 
-function post(data){
+async function post(data){
     try {
-        fetch("http://localhost:3030/jsonstore/collections/students", {
-            method  : "post",
-            headers :  {"content-type" : "application/json"},
-            body : JSON.stringify(data)
-        })
+        await generateRequest("http://localhost:3030/jsonstore/collections/students", "post", data)
         let tbody = document.querySelector("tbody")
-        tbody.appendChild(
-            e("tr", {}, [
-                e("th", {textContent : data.firstName}),
-                e("th", {textContent : data.lastName}),
-                e("th", {textContent : data.facultyNumber}),
-                e("th", {textContent : data.grade}),
-            ])
-        )
+        tbody.appendChild(generateComponent(data))
         Array.from(document.querySelectorAll(".inputs input")).forEach(field => field.value = "")
     }catch (er){
         throw new Error("server error has occurred")
     }
 }
 
-function e(type , attributes , children){
-    let result = document.createElement(type)
-    Object.entries(attributes).forEach(([prop , val]) => {
-        result[prop] = val
-    })
-    if(children){
-        children.forEach(el => result.appendChild(el))
-    }
-    return result
+function generateComponent(data){
+    return e("tr", {}, [
+        e("th", {textContent : data.firstName}),
+        e("th", {textContent : data.lastName}),
+        e("th", {textContent : data.facultyNumber}),
+        e("th", {textContent : data.grade}),
+    ])
 }
 
 function validate(array){

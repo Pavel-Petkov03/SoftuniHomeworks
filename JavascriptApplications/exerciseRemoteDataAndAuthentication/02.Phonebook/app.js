@@ -1,3 +1,5 @@
+import {generateRequest} from "../utils"
+
 function attachEvents() {
     document.getElementById("btnCreate").addEventListener("click" , post)
     document.getElementById("btnLoad").addEventListener("click" , get)
@@ -16,10 +18,12 @@ function build(data){
         let deleteBtn = document.createElement("button")
         deleteBtn.textContent = "Delete"
         deleteBtn.addEventListener("click" , async (ev) => {
-            await fetch("http://localhost:3030/jsonstore/phonebook/"+_id, {
-                method : "delete",
-                "content-type" : "application-json",
-            })
+            try {
+                await generateRequest("http://localhost:3030/jsonstore/phonebook/"+_id, "delete")
+            }
+            catch (er){
+                alert(er.message)
+            }
             ev.target.parentNode.remove()
         })
         li.appendChild(deleteBtn)
@@ -27,18 +31,17 @@ function build(data){
     })
 }
 
-function post(ev){
+async function post(ev){
     ev.preventDefault()
     let person = document.getElementById("person")
     let phone = document.getElementById("phone")
-    fetch("http://localhost:3030/jsonstore/phonebook/", {
-        method : "post",
-        headers : {"content-type" : "application/json"} ,
-        body : JSON.stringify({
-            person: person.value , phone : phone.value
+    try {
+        await generateRequest("http://localhost:3030/jsonstore/phonebook/", "post", {
+            person : person.value, phone : phone.value
         })
-    })
-
+    }catch (er){
+        alert(er.message)
+    }
     person.value = ""
     phone.value = ""
 }
