@@ -4,13 +4,20 @@ let [create , buy , allOrders] = document.querySelectorAll("button")
 function solve() {
     window.addEventListener("load" , getData)
     userData = JSON.parse(sessionStorage.getItem("userData"))
-    if(userData.id){
+    if(userData){
         create.addEventListener("click" , createEvent)
         buy.addEventListener("click" ,buyEvent)
         allOrders.addEventListener("click" , allOrdersEvent)
+        document.getElementById("guest").style.display = "none"
+        document.getElementById("logoutBtn").addEventListener("click" , logOut)
     }else{
         [...document.getElementsByClassName("authorized")].forEach(el => el.style.display = "none")
     }
+}
+
+function logOut(){
+    sessionStorage.clear()
+    document.location.href = "login.html"
 }
 
 async  function getData(){
