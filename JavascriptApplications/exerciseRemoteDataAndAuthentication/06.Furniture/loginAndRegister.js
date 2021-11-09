@@ -13,14 +13,13 @@ async function loginUser(ev){
     let data = retrieveData(loginForm)
     try {
         let response = await generateRequest("http://localhost:3030/users/login" ,"post" , data)
-        saveInStorage(response.accessToken)
+        saveInStorage(response)
     }catch (er){
         alert("Some error has occurred")
     }
 }
 
 async function registerUser(ev){
-    console.log()
     ev.preventDefault()
     let {email , password , rePass} = retrieveData(registerForm)
     try {
@@ -29,7 +28,7 @@ async function registerUser(ev){
             let data = await generateRequest("http://localhost:3030/users/register" , "post" , {
                 email , password
             } )
-            saveInStorage(data.accessToken)
+            saveInStorage(data)
         }catch (er){
             alert("server error has occurred")
         }
@@ -53,15 +52,11 @@ function validateUser(password , confirmPassword , email){
         throw new Error(errorMessage)
     }
 }
-
-
-
-
-
-
-function saveInStorage(accessToken){
+function saveInStorage(data){
     sessionStorage.clear()
-    sessionStorage.setItem("userData" , accessToken)
+    sessionStorage.setItem("userData" , JSON.stringify({
+        id : data._id , accessToken : data.accessToken
+    }))
     location.href = "home.html"
 }
 

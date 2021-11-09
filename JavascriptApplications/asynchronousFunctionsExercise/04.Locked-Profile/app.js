@@ -41,12 +41,14 @@ function composePerson(person){
         div,
         button
     ])
-    button.addEventListener("click" , () => {
+    button.addEventListener("click" , (ev) => {
         let currentDiv = document.getElementById(person._id)
         if(unlockProfileRadio.checked){
             if(currentDiv.style.display === "none"){
+                ev.target.textContent = "Show More"
                 currentDiv.style.display = "block"
             }else{
+                ev.target.textContent = "Show Less"
                 currentDiv.style.display = "none"
             }
         }
