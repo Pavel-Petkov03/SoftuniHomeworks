@@ -39,7 +39,26 @@ function retrieveData(form) {
     form.reset()
     return result
 }
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+
+function validateUser(password , confirmPassword , email){
+    let errorMessage = ""
+    if(password !== confirmPassword){
+        errorMessage = "the password and repeat password must match"
+    }else if(password.length <= 10 || password.length >= 20){
+        errorMessage = "the password must be between 10 and 20 symbols"
+    }else if(!validateEmail(email)){
+        errorMessage = "the email should be valid"
+    }
+    if (errorMessage){
+        throw new Error(errorMessage)
+    }
+}
 
 export {
-    generateRequest, e, retrieveData
+    generateRequest, e, retrieveData, validateUser
 }

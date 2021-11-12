@@ -1,4 +1,4 @@
-import {generateRequest} from "../utils";
+import {generateRequest} from "../utils.js";
 
 function attachEvents() {
     document.getElementById("submit").addEventListener("click" , post)
