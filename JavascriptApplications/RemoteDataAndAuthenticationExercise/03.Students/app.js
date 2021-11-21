@@ -1,4 +1,4 @@
-import {e, generateRequest, retrieveData} from "../utils"
+import {e, generateRequest, retrieveData} from "../utils.js"
 
 
 document.getElementById("submit").addEventListener("click" , async (ev) => {

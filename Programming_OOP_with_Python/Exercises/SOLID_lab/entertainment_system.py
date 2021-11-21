@@ -1,3 +1,6 @@
+import math
+
+
 class HdmiCable:
     def connect_to_device_via_hdmi_cable(self, devise): pass
 
