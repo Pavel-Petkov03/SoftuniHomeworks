@@ -1,0 +1,16 @@
+{
+  "name": "01.furniture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lit-html": "^2.0.2",
+    "page": "^1.11.6",
+    "page.js": "^4.13.3"
+  }
+}
