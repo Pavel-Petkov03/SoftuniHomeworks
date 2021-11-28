@@ -91,11 +91,11 @@ function validateFields(fields){
 
 
 const validateObj = {
-    "model" : (field) => field.value.length >= 4 ? true : false,
-    "make" : (field) => field.value.length >= 4 ? true : false,
-    "description" : (field) => field.value.length >= 10 ? true : false,
-    "price" : (field) => Number(field.value) > 0 ? true : false,
-    "img" : (field) => field.value.length > 0  ?true : false,
+    "model" : (field) => field.value.length >= 4 ,
+    "make" : (field) => field.value.length >= 4 ,
+    "description" : (field) => field.value.length >= 10 ,
+    "price" : (field) => Number(field.value) > 0 ,
+    "img" : (field) => field.value.length > 0,
     "material" : (field) => true,
-    "year" : (field) => (Number(field.value) > 1950 && Number(field.value) < 2050)  ? true : false,
+    "year" : (field) => (Number(field.value) > 1950 && Number(field.value) < 2050) ,
 }

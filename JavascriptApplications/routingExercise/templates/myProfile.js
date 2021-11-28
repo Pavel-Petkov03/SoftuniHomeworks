@@ -1,5 +1,5 @@
 import {html , } from "../src.js"
-import { generateRequest } from "../utils.js"
+import { generateRequest , getUserInfo} from "../utils.js"
 import { furnitureTemplate } from "./furnitureTemplate.js"
 
 const myProfileTemplate  = (array) => html`

@@ -1,0 +1,18 @@
+{
+  "name": "team-manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "description": "",
+  "devDependencies": {
+    "lit-html": "^1.4.1",
+    "page": "^1.11.6",
+    "page.js": "^4.13.3"
+  }
+}
