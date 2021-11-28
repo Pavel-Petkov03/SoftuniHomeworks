@@ -2,7 +2,7 @@
 import { endpoints } from "../api.js"
 import {html, page} from "../lib.js"
 import { retrieveData, generateRequest, getUserInfo } from "../utils.js"
-import { renderModal } from "./modal.js"
+import { handleModal } from "./modal.js"
 
 const template = () => html`
             <section id="create">
@@ -11,7 +11,6 @@ const template = () => html`
                         <h1>New Team</h1>
                     </header>
                     <form id="create-form" class="main-form pad-large">
-                        <div class="error">Error message.</div>
                         <label>Team name: <input type="text" name="name"></label>
                         <label>Logo URL: <input type="text" name="logoUrl"></label>
                         <label>Description: <textarea name="description"></textarea></label>
@@ -27,16 +26,12 @@ export function renderCreate(ctx){
 
 async function create(ev){
     ev.preventDefault()
-    try{
+    handleModal("Do you realy want to create team" , true , true , async () => {
         const data = retrieveData(document.querySelector("form"))
         validateFields(data)
-        renderModal("Do you realy want to create team", true, true , async () => {
-            await generateRequest(endpoints.teams, "post", data, getUserInfo().accessToken)
-            page.redirect("/my-profile")
-        })
-    }catch(er){
-        renderModal(er.message , true)
-    }
+        await generateRequest(endpoints.teams, "post", data, getUserInfo().accessToken)
+        page.redirect("/my-profile")
+    })
 }
 
 

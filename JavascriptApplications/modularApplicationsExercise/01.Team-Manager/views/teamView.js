@@ -7,7 +7,7 @@ export const articleTemplate =  (data) => html`
         <div class="tm-preview">
             <h2>${data.name}</h2>
             <p>${data.description}</p>
-            <span class="details">${until(getAllNumbers(data._id), html`<p>Loading...</p>`)}</span>
+            <span class="details">${until(getAllNumbers(data), html`<p>Loading...</p>`)}</span>
             <div><a href="/details/${data._id}" class="">See details</a></div>
         </div>
     </article>
@@ -16,7 +16,8 @@ export const articleTemplate =  (data) => html`
 
 
 
-async function getAllNumbers(id){
-    const data = await generateRequest(endpoints.allParticipantsInTeam(id), "get")
+async function getAllNumbers(payload){
+    const {_id} = payload
+    const data = await generateRequest(endpoints.queryMembersByKey(_id , "member"), "get")
     return data.length +1 
 }

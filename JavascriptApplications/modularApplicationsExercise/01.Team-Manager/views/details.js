@@ -5,7 +5,7 @@
 import {html, page} from "../lib.js"
 import { generateRequest, getUserInfo } from "../utils.js"
 import {endpoints} from "../api.js"
-import { renderModal } from "./modal.js"
+import { handleModal } from "./modal.js"
 const loggedUserTemplate = (data , status , members, currentUserId) => html`
     <section id="team-home">
                 <article class="layout">
@@ -93,15 +93,11 @@ html`<li>${data.user.username}${isOwner ? html`<a  class="tm-control action"
 
 async function decline(teamId , userId , ev){
     ev.preventDefault()
-    try{
-        renderModal("Do you realy want to remove the user" , true , true , async() => {
+    handleModal("Do you realy want to remove the user" , true , true , async () => {
         const [{_id}] = await generateRequest(endpoints.findPersonInParticularTeam(teamId , userId), "get")
         await generateRequest(endpoints.currentMember(_id), "delete" , null , getUserInfo().accessToken)
         page.redirect(`/details/${teamId}`)
-        })
-    }catch(er){
-        renderModal(er.message)
-    }
+    })
 }
 
 
@@ -112,53 +108,32 @@ async function getTeamInfo(teamId){
 
 async function approve(teamId , userId, ev){
     ev.preventDefault()
-    try{
-        renderModal("Do you realy want to approve the user" , true , true , async () => {
-            const [{_id}] = await generateRequest(endpoints.findPersonInParticularTeam(teamId , userId), "get")
-            await generateRequest(endpoints.currentMember(_id), "put", {
-                status : "member"
-            },  getUserInfo().accessToken)
-            page.redirect(`/details/${teamId}`)
-        })
-    }catch(er){
-        renderModal(er.message)
-    }
-    
+    handleModal("Do you realy want to approve the user" , true , true , async () => {
+        const [{_id}] = await generateRequest(endpoints.findPersonInParticularTeam(teamId , userId), "get")
+        await generateRequest(endpoints.currentMember(_id), "put", {
+            status : "member"
+        },  getUserInfo().accessToken)
+        page.redirect(`/details/${teamId}`)
+    })
 }
 
 async function join(teamId , ev){
     ev.preventDefault()
-    try{
-        renderModal("Do you want to join this team" , true , true, async () => {
-            await generateRequest(endpoints.allPeopleInAllTeams, "post", {
-                teamId,
-                status : "pending"
-            }, getUserInfo().accessToken)
-            page.redirect(`/details/${teamId}`)
-        })
-    }catch(er){
-        renderModal(er.message , true)
-    }
+    handleModal("Do you want to join this team" , true , true , async () => {
+        await generateRequest(endpoints.allPeopleInAllTeams, "post", {
+            teamId,
+            status : "pending"
+        }, getUserInfo().accessToken)
+        page.redirect(`/details/${teamId}`)
+    })
 }
-
-
-
-async function removeAndLeave(teamId , userId , ev, isCancel){
+async function removeAndLeave(teamId , userId , ev){
     ev.preventDefault()
-    try{
-        if(!isCancel){
-            renderModal("Do you want to leave the team" , true , true , async () => {
-            await generateRequest(endpoints.currentMember(userId) , "delete", null , getUserInfo().accessToken)
-            page.redirect(`/details/${teamId}`)
-            })
-        }
-    }catch(er){
-        renderModal(er.message)
-    }
+    handleModal("Do you want to leave the team", true , true , async() => {
+        await generateRequest(endpoints.currentMember(userId) , "delete", null , getUserInfo().accessToken)
+        page.redirect(`/details/${teamId}`)
+    })
 }
-
-
-
 
 export async function renderDetails(ctx){
     let currentUserId = getUserInfo()

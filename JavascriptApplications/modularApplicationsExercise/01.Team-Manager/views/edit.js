@@ -1,6 +1,6 @@
 import { endpoints } from "../api.js"
 import {html, page} from "../lib.js"
-import { renderModal } from "./modal.js"
+import { handleModal } from "./modal.js"
 import { generateRequest, retrieveData , getUserInfo } from "../utils.js"
 
 const template = (id) => html`
@@ -10,7 +10,6 @@ const template = (id) => html`
                 <h1>Edit Team</h1>
             </header>
             <form id="edit-form" class="main-form pad-large">
-                <div class="error">Error message.</div>
                 <label>Team name: <input type="text" name="name"></label>
                 <label>Logo URL: <input type="text" name="logoUrl"></label>
                 <label>Description: <textarea name="description"></textarea></label>
@@ -27,14 +26,10 @@ async function edit(id , ev){
     ev.preventDefault()
     const data = retrieveData(document.querySelector("form"))
     Object.assign(data, {_id : id})
-    try{
-        renderModal("Do you want to edit this team" , true , true  , async () => {
-            await generateRequest(endpoints.currentTeam(id) , "put", data, getUserInfo().accessToken)
-            page.redirect(`/details/${id}`)
-        })
-    }catch(er){
-        renderModal(er.message , true)
-    }
+    handleModal("Do you want to edit this team" , true , true , async () => {
+        await generateRequest(endpoints.currentTeam(id) , "put", data, getUserInfo().accessToken)
+        page.redirect(`/details/${id}`)
+    })
 }
 
 

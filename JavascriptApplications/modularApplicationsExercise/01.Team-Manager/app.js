@@ -33,6 +33,4 @@ function loadMiddleware(ctx , next){
 }
 
 
-window.addEventListener('locationchange', function(){
-    console.log('location changed!');
-})
+
