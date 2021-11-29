@@ -1,5 +1,5 @@
 import {html} from "../src.js"
-import { clearUserInfo, generateRequest, getUserInfo } from "../utils.js"
+import { clearUserInfo, getUserInfo } from "../utils.js"
 import {page} from "../src.js"
 
 export const nav =  (data) => html`
