@@ -3,7 +3,7 @@ const { chromium } = require('playwright-chromium');
 const { expect } = require('chai');
 
 const host = 'http://localhost:3000'; // Application host (NOT service host - that can be anything)
-const DEBUG = false;
+const DEBUG = true;
 
 const mockData = require('./mock-data.json');
 const endpoints = {
@@ -621,7 +621,7 @@ describe('E2E tests', function () {
         });
     });
 
-    describe('BONUS: Notifications [ 5 Points ]', () => {
+    describe.only('BONUS: Notifications [ 5 Points ]', () => {
         it('Login notification with invalid data', async () => {
             const endpoint = '**' + endpoints.login;
             let called = false;

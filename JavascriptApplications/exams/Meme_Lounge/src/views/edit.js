@@ -1,6 +1,6 @@
 
 import {html, page} from "../lib.js"
-import {retrieveData , generateRequest, getUserInfo,} from "../utils.js"
+import {retrieveData , generateRequest, getUserInfo, errorBox} from "../utils.js"
 
 const template = (data) => html`
     <section id="edit-meme">
@@ -23,12 +23,13 @@ const template = (data) => html`
 async function edit(id , ev){
     ev.preventDefault()
     const data = retrieveData(document.querySelector("form"))
-    Object.assign(data, {_id : id})
     try{
+        validate(data)
+        Object.assign(data, {_id : id})
         await generateRequest(`http://localhost:3030/data/memes/${id}` , "put", data, getUserInfo().accessToken)
         page.redirect(`/details/${id}`)
     }catch(er){
-        alert(er.message)
+        errorBox(er.message)
     }
 }
 
@@ -37,6 +38,14 @@ export async function renderEditPage(ctx){
     ctx.render(template(await getMeme(ctx.params.id)))
 }
 
+
+function validate(data){
+    Object.values(data).forEach(element => {
+        if(element === ""){
+            throw new Error("All fiedls must be filled")
+        }
+    });
+}
 
 async function getMeme(id){
     return await generateRequest(`http://localhost:3030/data/memes/${id}`, "get")

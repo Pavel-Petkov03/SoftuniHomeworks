@@ -1,6 +1,6 @@
 
 import {html, page } from "../lib.js"
-import {retrieveData , generateRequest, getUserInfo,} from "../utils.js"
+import {retrieveData , generateRequest, getUserInfo, errorBox} from "../utils.js"
 
 const template = () => html`
     <section id="create-meme">
@@ -26,7 +26,7 @@ async function create(ev){
         await generateRequest("http://localhost:3030/data/memes", "post", data, getUserInfo().accessToken)
         page.redirect("/all-memes")
     }catch(er){
-        alert(er.message)
+        errorBox(er.message)
     }
 }
 

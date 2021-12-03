@@ -1,5 +1,5 @@
 import {html , page} from "../lib.js"
-import {retrieveData , setUserInfo , generateRequest} from "../utils.js"
+import {retrieveData , setUserInfo , generateRequest, errorBox} from "../utils.js"
 
 const loginTemplate = () => html`
     <section id="login">
@@ -42,6 +42,6 @@ async function login(ev){
         })
         page.redirect("/all-memes")
     }catch (er){
-        alert(er.message)
+        errorBox(er.message)
     }
 }
