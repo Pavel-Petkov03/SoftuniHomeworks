@@ -21,7 +21,7 @@ page("/my-profile/:id", renderMyProfile)
 page("/", renderHome)
 page("/edit/:id", renderEdit)
 page("/details/:id" , renderDetails)
-page("/deltails/:id", renderEdit)
+page("/edit/:id", renderEdit)
 
 page.start()
 
