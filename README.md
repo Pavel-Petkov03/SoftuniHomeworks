@@ -12,5 +12,6 @@ My courses in Softuni University
 | Programming OOP with Python| [Link](https://softuni.bg/certificates/details/110493/1907c93c) | 
 | Javascript Advanced| [Link](https://softuni.bg/certificates/details/114879/8eb05f68) | 
 | Javascript Applications| [Link](https://softuni.bg/certificates/details/120990/b8f05da7) | 
+| Python Web Basics| [Link](https://softuni.bg/certificates/details/127698/d3a75981) | 
 
 
