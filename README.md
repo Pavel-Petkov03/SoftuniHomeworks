@@ -13,4 +13,5 @@ My courses in Softuni University
 | Javascript Advanced| [Link](https://softuni.bg/certificates/details/114879/8eb05f68) |
 | Javascript Applications| [Link](https://softuni.bg/certificates/details/120990/b8f05da7) |
 | Python Web Basics| [Link](https://softuni.bg/certificates/details/127698/d3a75981) |
+| Python Web Framework| [Link](https://softuni.bg/certificates/details/132407/4ce6cb29) |
 
